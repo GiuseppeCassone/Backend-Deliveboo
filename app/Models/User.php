@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // relazione 1 to 1 - user / restaurant
+    public function restaurant(){
+        return $this->hasOne(Restaurant::class);
+    }
 }
