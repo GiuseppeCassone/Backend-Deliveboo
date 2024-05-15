@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('price');
             $table->text('description');
             $table->text('ingredients');
-            $table->boolean('is_visible');
+            $table->boolean('is_visible')->default(1);
             $table->foreignId('restaurant_id')->constrained();
             $table->timestamps();
         });

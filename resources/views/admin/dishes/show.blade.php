@@ -7,10 +7,16 @@
                 {{ $dish->name }}
             </li>
             <li>
+                <img src="{{asset('storage/' . $dish->img)}}" alt="immagine">
+            </li>
+            <li>
                 {{ $dish->description }}
             </li>
             <li>
                 {{ $dish->ingredients }}
+            </li>
+            <li>
+                $ {{ $dish->price }}
             </li>
             <li>
                 {{ $dish->is_visible? 'Disponibile' : 'Non disponibile' }}
