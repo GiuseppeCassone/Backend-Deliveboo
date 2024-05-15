@@ -37,31 +37,31 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
 
-        $data = $request->all();
+    //     $data = $request->all();
 
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'restaurant_name' => ['required', 'string', 'max:200'],
-            'img' => ['nullable', 'string', 'max:5000'],
-            'description' => ['nullable', 'string', 'max:5000'],
-            'address' => ['required', 'string'],
-            'vat' => ['required', 'string'],
-            'phone_number' => ['required', 'string'],
-            'typology' => ['required']
-        ],
-        [
-            'name.required' => 'Inserisci Titolo!!',
-            'name.max' => "Puoi usare al massimo :max caratteri",
-            'img.max' => "Puoi usare al massimo :max caratteri",
-            'description.max' => "Puoi usare al massimo :max caratteri",
-            'address.required' => 'Inserisci un indirizzo valido',
-            'vat.required' => 'Inserisci un numero valido',
-            'phone_number.required' => 'Inserisci un numero di telefono valido',
-            'typology.required' => 'la tipologia deve essere inserita'
-        ]
-    );
+            // 'restaurant_name' => ['required', 'string', 'max:200'],
+            // 'img' => ['nullable', 'max:5000'],
+            // 'description' => ['nullable', 'string', 'max:5000'],
+            // 'address' => ['required', 'string'],
+            // 'vat' => ['required', 'string'],
+            // 'phone_number' => ['required', 'string'],
+            // 'typology' => ['required']
+        ]);
+    //     [
+    //         'name.required' => 'Inserisci Titolo!!',
+    //         'name.max' => "Puoi usare al massimo :max caratteri",
+    //         'img.max' => "Puoi usare al massimo :max caratteri",
+    //         'description.max' => "Puoi usare al massimo :max caratteri",
+    //         'address.required' => 'Inserisci un indirizzo valido',
+    //         'vat.required' => 'Inserisci un numero valido',
+    //         'phone_number.required' => 'Inserisci un numero di telefono valido',
+    //         // 'typology.required' => 'la tipologia deve essere inserita'
+    //     ]
+    // );
 
         $user = User::create([
             'name' => $request->name,
@@ -79,7 +79,7 @@ class RegisteredUserController extends Controller
             'phone_number' => $request->phone_number
         ]);
 
-        if (Arr::exists($data, "typology")) $restaurant->typologies()->attach($data["typology"]);
+        // if (Arr::exists($data, "typology")) $restaurant->typologies()->attach($data["typology"]);
 
 
 
