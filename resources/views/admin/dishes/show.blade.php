@@ -22,5 +22,7 @@
                 {{ $dish->is_visible? 'Disponibile' : 'Non disponibile' }}
             </li>
         </ul>
+
+        <a href="{{route('admin.dishes.edit', $dish)}}">Modifica Piatto</a>
     </div>
 @endsection

@@ -24,6 +24,7 @@
         @endforeach
         
     </ul>
+    <a class="btn btn-secondary" href="{{route('admin.dishes.create')}}">Inserisci un Nuovo Piatto</a>
 </div>
     
 
