@@ -165,8 +165,8 @@
                             @enderror
                         </div> -->
 
-                        <!-- <div class="mb-3">
-                            <label class="mb-2" for="">Tecnologie</label>
+                        <div class="mb-3">
+                            <label class="mb-2" for="">Tipologie</label>
                             <div class="d-flex gap-3 flex-wrap">
                                 @foreach($typologies as $typology)
                                     <div class="form-check">
@@ -183,7 +183,7 @@
                                     </div>
                                 @endforeach
                             </div>
-                        </div> -->
+                        </div>
 
                         <!-- <div class="mb-3">
                             <label for="img" class="form-label">Inserisci un'immagine</label>

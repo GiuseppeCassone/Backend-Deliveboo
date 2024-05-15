@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
 
-    //     $data = $request->all();
+        $data = $request->all();
 
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -49,7 +49,7 @@ class RegisteredUserController extends Controller
             'address' => ['required', 'string'],
             'vat' => ['required', 'string'],
             'phone_number' => ['required', 'string'],
-            // 'typology' => ['required']
+            'typologies' => ['required']
         ],
         [
             'name.required' => 'Inserisci Titolo!!',
@@ -59,7 +59,7 @@ class RegisteredUserController extends Controller
             'address.required' => 'Inserisci un indirizzo valido',
             'vat.required' => 'Inserisci un numero valido',
             'phone_number.required' => 'Inserisci un numero di telefono valido',
-            // 'typology.required' => 'la tipologia deve essere inserita'
+            'typologies.required' => 'la tipologia deve essere inserita'
         ]
     );
 
@@ -79,7 +79,7 @@ class RegisteredUserController extends Controller
             'phone_number' => $request->phone_number
         ]);
 
-        // if (Arr::exists($data, "typology")) $restaurant->typologies()->attach($data["typology"]);
+        if (Arr::exists($data, "typologies")) $restaurant->typologies()->attach($data["typologies"]);
 
 
 
