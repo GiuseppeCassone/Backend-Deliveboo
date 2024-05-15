@@ -24,7 +24,7 @@ class StoreDishRequest extends FormRequest
         return [
             'name' => 'required|max:200',
             'img' => 'nullable|file',
-            'price' => 'required|decimal:2',
+            'price' => 'required|numeric|between:0,3000.99',
             'description' => 'required|max:5000',
             'ingredients' => 'required|max:5000',
             // 'is_visible' => 'boolean'
@@ -37,7 +37,9 @@ class StoreDishRequest extends FormRequest
             'name.max' => 'devi inserire al massimo :max caratteri',
             'img.file' => 'devi inserire un file valido',
             'price.required' => 'devi inserire un prezzo al piatto!',
-            'price.decimal' => 'il prezzo deve avere almeno 2 decimali!',
+            // 'price.decimal' => 'il prezzo deve avere almeno 2 decimali!',
+            'price.numeric' =>'Inserisci una cifra Corretta',
+            'price.between' => 'Il prezzo deve essere compreso tra :min e :max',
             'description.required' => 'devi inserire una descrizione al piatto!',
             'description.max' => 'devi inserire al massimo :max caratteri',
             'ingredients.required' => 'devi inserire almeno un ingrediente al piatto!',
