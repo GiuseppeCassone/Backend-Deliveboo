@@ -14,7 +14,7 @@
           <p class="card-text">{{$restaurant->vat}}</p>
           <p class="card-text">{{$restaurant->phone_number}}</p>
 
-          <a href="#" class="btn btn-primary">Visualizza il tuo menu</a>
+          <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Visualizza il tuo menu</a>
         </div>
     </div>
 
