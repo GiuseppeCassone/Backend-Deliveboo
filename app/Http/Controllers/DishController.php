@@ -69,7 +69,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        // if ($dish->restaurant->id != Auth::id()) abort(403);
+        
         return view('admin.dishes.edit', compact('dish'));
         
     }
@@ -77,20 +77,17 @@ class DishController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDishRequest $request, Dish $dish)
+    public function update(StoreDishRequest $request, Dish $dish)
     {
         $request->validated();
 
-        // if ($request->has('restaurant_id') && $request->restaurant_id == Auth::id()) {
-        //     $request['restaurant_id'] = Auth::id();
-        // }
-
+        
         if ($request->hasFile("img")) {
             $path = Storage::disk("public")->put("images", $request->img);
 
             $dish->img = $path;
         }
-        // $request['restaurant_id'] = Auth::id();
+        $request['restaurant_id'] = Auth::id();
 
         $dish->update($request->all());
 
