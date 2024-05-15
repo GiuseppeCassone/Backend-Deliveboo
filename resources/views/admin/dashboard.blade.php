@@ -10,17 +10,19 @@
             <div class="card">
                 <div class="card-header">{{ __('User Dashboard') }}</div>
 
-                <div class="card-body">
+                <div class="card-body d-flex flex-column align-items-start gap-3">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Bentornato') }}
+                    <a href="{{route('admin.restaurant.index')}}" class="btn btn-primary">Vai al tuo ristorante</a>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 @endsection
