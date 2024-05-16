@@ -11,17 +11,17 @@
             </svg>
         </div>
         <h1 class="display-5 fw-bold">
-            Welcome to Laravel+Bootstrap 5
+            Benvenuto nell'interfaccia di gestione del ristorante
         </h1>
 
-        <p class="col-md-8 fs-4">This a preset package with Bootstrap 5 views for laravel projects including laravel breeze/blade. It works from laravel 9.x to the latest release 10.x</p>
-        <a href="https://packagist.org/packages/pacificdev/laravel_9_preset" class="btn btn-primary btn-lg" type="button">Documentation</a>
+        <p class="col-md-8 fs-4">Questa è la tua dashboard di gestione. Da qui, puoi gestire i tuoi ordini, aggiornare il tuo menu, controllare le statistiche delle vendite e molto altro.</p>
+        <a href="https://link-to-your-documentation" class="btn btn-primary btn-lg" type="button">Documentazione</a>
     </div>
 </div>
 
 <div class="content">
     <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora temporibus, dicta nemo aliquam totam nisi deserunt soluta quas voluptatum ab beatae praesentium necessitatibus minus, facilis illum rerum officiis accusamus dolores!</p>
+        <p>Per iniziare, ti consigliamo di dare un'occhiata alla nostra documentazione, che fornisce una panoramica dettagliata di tutte le funzionalità disponibili. Se hai bisogno di assistenza, non esitare a contattare il nostro team di supporto.</p>
     </div>
 </div>
 @endsection

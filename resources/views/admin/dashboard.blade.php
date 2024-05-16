@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
-                <div class="card-header">{{ __('User Dashboard') }}</div>
+                <div class="card-header">{{ __('Dashboard utente') }}</div>
 
                 <div class="card-body d-flex flex-column align-items-start gap-3">
                     @if (session('status'))

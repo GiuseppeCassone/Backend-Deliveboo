@@ -2,26 +2,16 @@
 
 @section('content')
     <div class="container py-5">
-        <ul>
-            <li>
-                {{ $dish->name }}
-            </li>
-            <li>
-                <img src="{{asset('storage/' . $dish->img)}}" alt="immagine">
-            </li>
-            <li>
-                {{ $dish->description }}
-            </li>
-            <li>
-                {{ $dish->ingredients }}
-            </li>
-            <li>
-                $ {{ $dish->price }}
-            </li>
-            <li>
-                {{ $dish->is_visible? 'Disponibile' : 'Non disponibile' }}
-            </li>
-        </ul>
+        <div class="card mb-3">
+            <img src="{{asset('storage/' . $dish->img)}}" class="card-img-top" alt="immagine">
+            <div class="card-body">
+                <h5 class="card-title">Nome del piatto: {{ $dish->name }}</h5>
+                <p class="card-text">Descrizione:<br>{{ $dish->description }}</p>
+                <p class="card-text">Ingredienti:<br>{{ $dish->ingredients }}</p>
+                <p class="card-text">Prezzo del piatto:<br>€ {{ $dish->price }}</p>
+                <p class="card-text">Disponibilità del piatto:<br>{{ $dish->is_visible? 'Disponibile' : 'Non disponibile' }}</p>
+            </div>
+        </div>
 
         <!-- <a href="{{route('admin.dishes.edit', $dish)}}">Modifica Piatto</a> -->
         <div class="py-5">
