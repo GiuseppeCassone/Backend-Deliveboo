@@ -48,13 +48,14 @@ class RegisteredUserController extends Controller
             'description' => ['nullable', 'string', 'max:5000'],
             'address' => ['required', 'string', 'max:255'],
             'vat' => ['required', 'digits:11'],
-            'phone_number' => ['required', 'digits:10'],
-            'typologies' => ['required']
+            'phone_number' => ['nullable', 'digits:10'],
+            'typologies' => ['required', 'min:1']
         ],
         [
             'name.required' => 'Inserisci il tuo nome',
             'name.max' => "Puoi usare al massimo :max caratteri",
             'name.alpha' => "Il tuo nome deve contenere solo lettere",
+            'email.required' => "Indirizzo email obbligatorio",
             'password.required' => 'Inserisci una password.',
             'password.confirmed' => 'Le due password non sono uguali',
             'password.min' => 'La password deve contenere almeno :min caratteri.',
@@ -66,7 +67,7 @@ class RegisteredUserController extends Controller
             'address.max' => 'Il tuo indirizzo non deve essere lungo :max caratteri',
             'vat.required' => 'Inserisci un numero valido',
             'vat.digits' => 'Devi inserire 11 numeri per la tua Partita IVA',
-            'phone_number.required' => 'Inserisci un numero di telefono valido',
+            // 'phone_number.required' => 'Inserisci un numero di telefono valido',
             'phone_number.digits' => 'Il numero di telefono deve avere esattamente 10 numeri',
             'typologies.required' => 'Devi selezionare almeno una tipologia per il tuo ristorante'
         ]

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('img')->nullable();
             $table->string('address');
             $table->string('vat');
-            $table->string('phone_number');
+            $table->string('phone_number')->nullable();
 
             $table->foreignId('user_id')->constrained();
 
