@@ -9,7 +9,7 @@
         @csrf
 
         <div class="mb-2">
-            <label for="name" class="form-label">Nome piatto: </label>
+            <label for="name" class="form-label">Nome piatto: <span class="text-danger">*</span></label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
               value="{{ old('name') }}" required>
             @error('name')
@@ -22,7 +22,7 @@
         <div class="mb-2">
             <label for="img" class="form-label">Immagine: </label>
             <input type="file" class="form-control @error('img') is-invalid @enderror" id="img" name="img"
-              value="{{ old('img') }}" required>
+              value="{{ old('img') }}">
             @error('img')
             <div class="invalid-feedback">
               {{$message}}
@@ -31,7 +31,7 @@
         </div>
 
         <div class="mb-2">
-            <label for="price" class="form-label">Prezzo: </label>
+            <label for="price" class="form-label">Prezzo: <span class="text-danger">*</span></label>
             <input type="number" step="0.01" min="0" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
               value="{{ old('price') }}" required>
             @error('price')
@@ -53,7 +53,7 @@
         </div>
 
         <div class="mb-2">
-            <label for="ingredients" class="form-label">Ingredienti: </label>
+            <label for="ingredients" class="form-label">Ingredienti: <span class="text-danger">*</span></label>
             <input type="text" class="form-control @error('ingredients') is-invalid @enderror" id="ingredients" name="ingredients"
               value="{{ old('ingredients') }}" required>
             @error('ingredients')
