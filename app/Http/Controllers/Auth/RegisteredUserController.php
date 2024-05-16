@@ -63,12 +63,12 @@ class RegisteredUserController extends Controller
             'img.max' => "Puoi usare al massimo :max caratteri",
             'description.max' => "Puoi usare al massimo :max caratteri",
             'address.required' => 'Inserisci un indirizzo valido',
-            'address.required' => 'Il tuo indirizzo non deve essere lungo :max caratteri',
+            'address.max' => 'Il tuo indirizzo non deve essere lungo :max caratteri',
             'vat.required' => 'Inserisci un numero valido',
             'vat.digits' => 'Devi inserire 11 numeri per la tua Partita IVA',
             'phone_number.required' => 'Inserisci un numero di telefono valido',
             'phone_number.digits' => 'Il numero di telefono deve avere esattamente 10 numeri',
-            'typologies.required' => 'la tipologia deve essere inserita'
+            'typologies.required' => 'Devi selezionare almeno una tipologia per il tuo ristorante'
         ]
     );
 
