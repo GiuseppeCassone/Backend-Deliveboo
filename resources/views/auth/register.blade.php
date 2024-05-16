@@ -12,10 +12,10 @@
                         @csrf
 
                         <div class="mb-4 row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" placeholder="Inserisci il tuo nome" maxlength="255" pattern="[A-Za-z]+" title="Il tuo nome deve contenere solo lettere." class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -26,10 +26,10 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" placeholder="Inserisci la tua E-mail" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" placeholder="Inserisci una password" minlength="8" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -54,18 +54,18 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma la password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" placeholder="Conferma la password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="restaurant_name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Ristorante') }}</label>
+                            <label for="restaurant_name" class="col-md-4 col-form-label text-md-right">{{ __('Nome del tuo ristorante') }}</label>
 
                             <div class="col-md-6">
-                                <input id="restaurant_name" type="text" class="form-control @error('restaurant_name') is-invalid @enderror" name="restaurant_name" required autocomplete="new-restaurant_name">
+                                <input id="restaurant_name" type="text" placeholder="Inserisci il nome del tuo ristorante" required maxlength="200" class="form-control @error('restaurant_name') is-invalid @enderror" name="restaurant_name" required autocomplete="new-restaurant_name">
 
                                 @error('restaurant_name')
                                 <span class="invalid-feedback" role="alert">
@@ -76,7 +76,7 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
+                            <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('Immagine del ristorante') }}</label>
 
                             <div class="col-md-6">
                                 <input id="img" type="file" class="form-control @error('img') is-invalid @enderror" name="img" required autocomplete="new-img">
@@ -90,10 +90,10 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Descrizione Ristorante') }}</label>
+                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Descrizione del ristorante') }}</label>
 
                             <div class="col-md-6">
-                                <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="new-description">
+                                <input id="description" type="text" placeholder="Inserisci una breve descrizione del ristorante..." class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="new-description">
 
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
@@ -104,10 +104,10 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo Ristorante') }}</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo del ristorante') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="new-address">
+                                <input id="address" type="text" placeholder="Inserisci l'indirizzo del tuo ristorante" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="new-address">
 
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
@@ -121,7 +121,7 @@
                             <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('P. IVA') }}</label>
 
                             <div class="col-md-6">
-                                <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" required autocomplete="new-vat">
+                                <input id="vat" type="text" placeholder="Inserisci la tua partita iva" maxlength="11" pattern="\d{11}" title="Il campo deve contenere esattamente 11 numeri." class="form-control @error('vat') is-invalid @enderror" name="vat" required autocomplete="new-vat">
 
                                 @error('vat')
                                 <span class="invalid-feedback" role="alert">
@@ -132,10 +132,10 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Numero di Telefono') }}</label>
+                            <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Numero di telefono') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" required autocomplete="new-phone_number">
+                                <input id="phone_number" type="text" placeholder="Inserisci il tuo numero di telefono" maxlength="10" pattern="\d{10}" title="Il campo deve contenere esattamente 10 numeri." class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" required autocomplete="new-phone_number">
 
                                 @error('phone_number')
                                 <span class="invalid-feedback" role="alert">
@@ -166,7 +166,7 @@
                         </div> -->
 
                         <div class="mb-3">
-                            <label class="mb-2" for="">Tipologie</label>
+                            <label class="mb-2" for="">Seleziona le tipologie del tuo ristorante</label>
                             <div class="d-flex gap-3 flex-wrap">
                                 @foreach($typologies as $typology)
                                     <div class="form-check">
@@ -208,7 +208,7 @@
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Registrati alla nostra piattaforma') }}
                                 </button>
                             </div>
                         </div>
