@@ -3,15 +3,16 @@
 @section('content')
 
 <div class="container">
-    <ul>
+    <ul class="py-5">
         @foreach ($dishes as $dish)
             {{-- <li>
                 {{ $dish->img }}
             </li> --}}
-            <li>
+            <li class="d-flex justify-content-between py-2">
                 {{ $dish->name }}
                 <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-primary">Visualizza dettagli del piatto</a>
             </li>
+            <hr>
             {{-- <li>
                 {{ $dish->description }}
             </li>
