@@ -147,10 +147,6 @@
 
                         <div class="mb-3">
                             <label class="mb-2" for="typologies">Seleziona le tipologie del tuo ristorante <span class="text-danger">*</span></label>   
-                            {{-- @if ( $errors ->has('typologies') == 1)
-                                        <strong>Devi selezionare almeno una tipologia per il tuo ristorante</strong>
-                                        @dump($errors->default)
-                                    @endif                         --}}
                                     @if ($errors->has('typologies'))
                                         <small class="text-danger fw-bold ms-2">
                                             {{ $errors->first('typologies') }}
@@ -170,17 +166,7 @@
                                         >
                                         <label for="typology-{{$typology->id}}" class="form-check-label">{{$typology->type}}</label>
                                     </div>
-                                @endforeach
-                                
-                                    {{-- @if ( $error -> $ (typologies) < 1)
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>diooooo</strong>
-                                        </span>
-                        
-                                    @endif --}}
-                                    
-
-                                                        
+                                @endforeach                                     
                             </div>
                         </div>
 
