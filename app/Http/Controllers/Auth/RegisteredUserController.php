@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -44,7 +45,7 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', 'min:8', Rules\Password::defaults()],
             'restaurant_name' => ['required', 'string', 'max:200'],
-            'img' => ['nullable', 'max:5000'],
+            'img' => ['nullable', 'max:5000', 'file'],
             'description' => ['nullable', 'string', 'max:5000'],
             'address' => ['required', 'string', 'max:255'],
             'vat' => ['required', 'digits:11'],
@@ -73,6 +74,14 @@ class RegisteredUserController extends Controller
         ]
     );
 
+    $restaurant_image = new Restaurant();
+
+    if ($request->hasFile("img")) {
+        $path = Storage::disk("public")->put("images", $request->img);
+
+        $restaurant_image->img = $path;
+    }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -82,7 +91,7 @@ class RegisteredUserController extends Controller
         $restaurant = Restaurant::create([
             'user_id' => $user->id,
             'name' =>$request->restaurant_name,
-            'img' => $request->img,
+            'img' => $path,
             'description' => $request->description,
             'address' => $request->address,
             'vat' => $request->vat,
