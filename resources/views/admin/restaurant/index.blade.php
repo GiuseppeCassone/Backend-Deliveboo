@@ -6,7 +6,7 @@
     <h1 class="mb-2">Bentornato {{$user->name}}</h1>
 
     <div class="card mb-3">
-      {{-- <img src="{{asset('storage/' . $restaurant->img)}}" class="card-img-top" alt="..."> --}}
+     
       <img src="{{str_contains($restaurant->img, 'https') ? $restaurant->img : asset('storage/' . $restaurant->img)}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{$restaurant->name}}</h5>
