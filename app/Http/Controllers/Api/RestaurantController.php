@@ -10,7 +10,15 @@ class RestaurantController extends Controller
 {
     public function index(){
         
-        $restaurants = Restaurant::with('typologies')->get();
+        $query = Restaurant::with('typologies');
+
+        if (request('type')) {
+            $query->whereHas('typologies', function ($query) {
+                $query->where('type', request('type'));
+            });
+        }
+        $restaurants = $query->get();
+        // con get() li prendo tutti, nel caso dovessi mettere una paginazione al posto del get() ci andrà paginate();
 
         return response()->json([
             'success' => true,
