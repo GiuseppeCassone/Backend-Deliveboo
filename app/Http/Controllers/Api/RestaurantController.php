@@ -12,6 +12,16 @@ class RestaurantController extends Controller
         
         $query = Restaurant::with('typologies');
 
+        // $types = request('typologies');
+
+        // $typesArray = explode(',', $types);
+
+        // if ($typesArray){
+        //     $query->whereHas('typologies', function($query) use ($typesArray) {
+        //         $query->wherIn('type', $typesArray);
+        //     });
+        // }
+
         if (request('type')) {
             $query->whereHas('typologies', function ($query) {
                 $query->where('type', request('type'));
