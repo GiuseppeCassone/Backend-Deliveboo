@@ -35,10 +35,14 @@ class RestaurantController extends Controller
             'results' => $restaurants
         ]);
     }
+
+    public function show($id){
+        $restaurant = Restaurant::with('typologies')->where('id', '=', $id)->first();
+
+        return response()->json([
+            'success' => true,
+            'results' => $restaurant
+        ]);
+    }
 }
 
-// if (request('type')) {
-//     $query->whereHas('typologies', function ($query) {
-//         $query->where('type', request('type'));
-//     });
-// }
