@@ -27,7 +27,7 @@ class RestaurantController extends Controller
             }
         }       
 
-        $restaurants = $query->get();
+        $restaurants = $query->paginate(3);
         // con get() li prendo tutti, nel caso dovessi mettere una paginazione al posto del get() ci andrà paginate();
         
         return response()->json([
