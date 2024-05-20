@@ -41,7 +41,7 @@ class RegisteredUserController extends Controller
         $data = $request->all();
 
         $request->validate([
-            'name' => ['required', 'string', 'max:255', 'alpha'],
+            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', 'min:8', Rules\Password::defaults()],
             'restaurant_name' => ['required', 'string', 'max:200'],
@@ -55,7 +55,7 @@ class RegisteredUserController extends Controller
         [
             'name.required' => 'Inserisci il tuo nome',
             'name.max' => "Puoi usare al massimo :max caratteri",
-            'name.alpha' => "Il tuo nome deve contenere solo lettere",
+            // 'name.alpha' => "Il tuo nome deve contenere solo lettere",
             'email.required' => "Indirizzo email obbligatorio",
             'password.required' => 'Inserisci una password.',
             'password.confirmed' => 'Le due password non sono uguali',
