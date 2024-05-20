@@ -25,27 +25,20 @@ class RestaurantController extends Controller
                 });
                 
             }
-        }
+        }       
 
-        // $typesArray = explode(',', $types);
-
-        // if ($typesArray){
-        //     $query->whereHas('typologies', function($query) use ($typesArray) {
-        //         $query->wherIn('type', $typesArray);
-        //     });
-        // }
-
-        // if (request('type')) {
-        //     $query->whereHas('typologies', function ($query) {
-        //         $query->where('type', request('type'));
-        //     });
-        // }
         $restaurants = $query->get();
         // con get() li prendo tutti, nel caso dovessi mettere una paginazione al posto del get() ci andrà paginate();
-
+        
         return response()->json([
             'success' => true,
             'results' => $restaurants
         ]);
     }
 }
+
+// if (request('type')) {
+//     $query->whereHas('typologies', function ($query) {
+//         $query->where('type', request('type'));
+//     });
+// }
