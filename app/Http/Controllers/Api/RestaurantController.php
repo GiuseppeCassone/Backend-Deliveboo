@@ -35,10 +35,21 @@ class RestaurantController extends Controller
             'results' => $restaurants
         ]);
     }
+
+    public function show($id){
+        $restaurant = Restaurant::with('typologies', 'dishes')->where('id', '=', $id)->first();
+        
+        if($restaurant){
+            return response()->json([
+                "success" => true,
+                "result"=> $restaurant
+            ]);
+        } else {
+            return response()->json([
+                "success" => false,
+                "error" => "Ristorante non trovato!!"
+            ]);
+        }
+    }
 }
 
-// if (request('type')) {
-//     $query->whereHas('typologies', function ($query) {
-//         $query->where('type', request('type'));
-//     });
-// }
