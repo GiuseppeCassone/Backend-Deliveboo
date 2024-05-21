@@ -19,11 +19,17 @@ class RestaurantController extends Controller
             $types = $request->input('typologies');
 
             $typesArray = explode(',', $types);
-            if($typesArray){
-                $query->whereHas('typologies', function ($query) use ($typesArray){
-                    $query->whereIn('type', $typesArray);
-                });
+            // if($typesArray){
+            //     $query->whereHas('typologies', function ($query) use ($typesArray){
+            //         $query->whereIn('type', $typesArray);
+            //     });
                 
+            // }
+
+            foreach ($typesArray as $type) {
+                $query->whereHas('typologies', function ($query) use ($type) {
+                    $query->where('type', $type);
+                });
             }
         }       
 
