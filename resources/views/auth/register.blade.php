@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }} <span class="text-danger">*</span></label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" placeholder="Inserisci il tuo nome" maxlength="255" pattern="[A-Z a-z]+" title="Il tuo nome deve contenere solo lettere." class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autofocus>
+                                <input id="name" type="text" placeholder="Inserisci il tuo nome" maxlength="255" pattern="[A-Z a-z]+" title="Il tuo nome deve contenere solo lettere." class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autofocus required>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }} <span class="text-danger">*</span></label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" placeholder="Inserisci la tua E-mail" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}">
+                                <input id="email" type="email" placeholder="Inserisci la tua E-mail" class="form-control @error('email') is-invalid @enderror" name="email" pattern="^[A-Za-z0-9.-']+@[A-Za-z.-]+.[A-Za-z]{2,}$" title="Inserisci una mail valida" value="{{ old('email') }}" required>
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -57,7 +57,8 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma la password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" placeholder="Conferma la password" class="form-control" name="password_confirmation">
+                                <input id="password-confirm" type="password" placeholder="Conferma la password" minlength="8" title="Assicurati che la password corrisponda a quella inserita" class="form-control" name="password_confirmation" required>
+                                <span id="password-match-error" class="text-danger" style="display: none;">Le password non corrispondono.</span>
                             </div>
                         </div>
 
@@ -188,4 +189,34 @@
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const password = document.getElementById('password');
+    const passwordConfirm = document.getElementById('password-confirm');
+    const passwordMatchError = document.createElement('span');
+    passwordMatchError.classList.add('text-danger');
+    passwordMatchError.style.display = 'none';
+    passwordMatchError.textContent = 'Le password non corrispondono.';
+    passwordConfirm.parentNode.appendChild(passwordMatchError);
+
+    form.addEventListener('submit', function (event) {
+        if (password.value !== passwordConfirm.value) {
+            event.preventDefault(); // Previeni l'invio del form
+            passwordMatchError.style.display = 'block'; // Mostra il messaggio di errore
+        } else {
+            passwordMatchError.style.display = 'none'; // Nascondi il messaggio di errore
+        }
+    });
+
+    passwordConfirm.addEventListener('input', function () {
+        if (password.value !== passwordConfirm.value) {
+            passwordMatchError.style.display = 'block'; // Mostra il messaggio di errore
+        } else {
+            passwordMatchError.style.display = 'none'; // Nascondi il messaggio di errore
+        }
+    });
+});
+</script>
 @endsection
