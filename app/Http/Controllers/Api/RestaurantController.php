@@ -37,12 +37,19 @@ class RestaurantController extends Controller
     }
 
     public function show($id){
-        $restaurant = Restaurant::with('typologies')->where('id', '=', $id)->first();
-
-        return response()->json([
-            'success' => true,
-            'results' => $restaurant
-        ]);
+        $restaurant = Restaurant::with('typologies', 'dishes')->where('id', '=', $id)->first();
+        
+        if($restaurant){
+            return response()->json([
+                "success" => true,
+                "result"=> $restaurant
+            ]);
+        } else {
+            return response()->json([
+                "success" => false,
+                "error" => "Ristorante non trovato!!"
+            ]);
+        }
     }
 }
 
