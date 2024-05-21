@@ -35,6 +35,26 @@ class RestaurantController extends Controller
             'results' => $restaurants
         ]);
     }
+
+    public function show($id){
+
+        $restaurant = Restaurant::with(['typologies','dishes'])->where('id', '=', $id)->first();
+
+        // dd($restaurant);
+
+        if($restaurant){
+            return response()->json([
+                "success" => true,
+                "result"=> $restaurant
+            ]);
+        } else {
+            return response()->json([
+                "success" => false,
+                "error" => "Project not found"
+            ]);
+        }
+        
+    }
 }
 
 // if (request('type')) {
