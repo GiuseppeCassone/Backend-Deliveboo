@@ -65,7 +65,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Risotto alla Milanese",
-                "img" => "https://www.lacucinaitaliana.it/content/uploads/2018/10/31111448/risotto-alla-milanese-796x512.jpg",
+                "img" => "https://safrescobaldistatic.blob.core.windows.net/media/2022/11/RISOTTO-ALLA-MILANESE.jpg",
                 "price" => 14.00,
                 "description" => "Risotto tipico milanese preparato con zafferano e brodo di carne.",
                 "ingredients" => "Riso Carnaroli, zafferano, brodo di carne, burro, Parmigiano Reggiano, cipolla, vino bianco",
@@ -74,7 +74,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Gnocchi al Pesto",
-                "img" => "https://primochef.it/wp-content/uploads/2020/05/SH_gnocchi_pesto.jpg",
+                "img" => "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/A39DEDA6-3C6B-4F02-B6A2-DAD2F8639A45/Derivates/2fae282e-739a-42d2-b9d7-84bf3374e63f.jpg",
                 "price" => 12.00,
                 "description" => "Gnocchi di patate conditi con pesto alla genovese.",
                 "ingredients" => "Gnocchi di patate, basilico, pinoli, Parmigiano Reggiano, pecorino, aglio, olio extravergine d'oliva",
@@ -83,7 +83,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Ossobuco",
-                "img" => "https://www.salepepe.it/files/2016/04/ossobuco-alla-milanese.jpg",
+                "img" => "https://blog.giallozafferano.it/cucinachetipassaoriginal/wp-content/uploads/2021/11/ossobuco-in-umido-32-scaled.jpg",
                 "price" => 18.00,
                 "description" => "Un piatto lombardo di ossobuco di vitello cotto lentamente in bianco.",
                 "ingredients" => "Ossobuco di vitello, carota, sedano, cipolla, brodo di carne, vino bianco, burro, prezzemolo",
@@ -92,7 +92,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Arancini di Riso",
-                "img" => "https://primochef.it/wp-content/uploads/2019/05/SH_arancini_di_riso.jpg",
+                "img" => "https://www.sicilianicreativiincucina.it/wp-content/uploads/2024/04/arancini-messinesi-2.jpg",
                 "price" => 8.00,
                 "description" => "Palline di riso farcite con ragù, piselli e mozzarella, fritte fino a doratura.",
                 "ingredients" => "Riso, ragù di carne, piselli, mozzarella, pangrattato, uova, olio per friggere",
@@ -101,7 +101,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Polenta con Funghi",
-                "img" => "https://www.ricettealvolo.it/wp-content/uploads/2020/01/Polenta-e-funghi.jpg",
+                "img" => "https://cdn.cook.stbm.it/thumbnails/ricette/143/143493/hd750x421.jpg",
                 "price" => 10.00,
                 "description" => "Polenta morbida accompagnata da un sugo di funghi misti.",
                 "ingredients" => "Farina di mais, funghi misti, aglio, prezzemolo, olio extravergine d'oliva, sale, pepe",
@@ -110,7 +110,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Melanzane alla Parmigiana",
-                "img" => "https://www.giallozafferano.it/images/168-16869/Melanzane-alla-Parmigiana_780x520_wm.jpg",
+                "img" => "https://www.cucchiaio.it/content/cucchiaio/it/ricette/2010/03/ricetta-parmigiana-melanzane/_jcr_content/header-par/image_single.img.jpg/1592993216714.jpg",
                 "price" => 13.00,
                 "description" => "Strati di melanzane fritte, mozzarella, Parmigiano e salsa di pomodoro cotti al forno.",
                 "ingredients" => "Melanzane, mozzarella, Parmigiano Reggiano, salsa di pomodoro, basilico, olio extravergine d'oliva",
@@ -119,7 +119,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Frittura di Calamari",
-                "img" => "https://www.lacucinaitaliana.it/content/uploads/2020/07/31211442/frittura-di-calamari-960x540.jpg",
+                "img" => "https://www.giallozafferano.it/images/153-15363/Frittura-di-calamari_780x520_wm.jpg",
                 "price" => 16.00,
                 "description" => "Anelli di calamari fritti in pastella, croccanti e saporiti.",
                 "ingredients" => "Calamari, farina, olio per friggere, limone, sale",
@@ -128,7 +128,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Ravioli di Ricotta e Spinaci",
-                "img" => "https://www.cucchiaio.it/content/cucchiaio/it/ricette/2017/01/ravioli-di-ricotta-e-spinaci/jcr:content/header-par/image_single.img.jpg/1548879021405.jpg",
+                "img" => "https://www.fattoincasadabenedetta.it/wp-content/uploads/2022/02/AdobeStock_227238772.jpeg",
                 "price" => 14.00,
                 "description" => "Pasta ripiena di ricotta e spinaci, condita con burro e salvia.",
                 "ingredients" => "Farina, uova, ricotta, spinaci, burro, salvia, Parmigiano Reggiano",
@@ -137,7 +137,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Pizza Quattro Stagioni",
-                "img" => "https://www.ilgiornaledelcibo.it/wp-content/uploads/2021/10/pizza-quattro-stagioni.jpg",
+                "img" => "https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2016/07/3017_Pizza.jpg?resize=895%2C616&ssl=1",
                 "price" => 12.00,
                 "description" => "Pizza divisa in quattro parti, ognuna con ingredienti diversi rappresentanti le stagioni.",
                 "ingredients" => "Pomodoro, mozzarella, funghi, prosciutto cotto, carciofi, olive, olio extravergine d'oliva",
@@ -146,7 +146,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Torta Caprese",
-                "img" => "https://www.salepepe.it/files/2014/04/torta-caprese-al-cioccolato-e-mandorle.jpg",
+                "img" => "https://www.ioscelgoveg.it/wp-content/uploads/2020/04/Torta-caprese-vegan-ioscelgoveg_Essere-Animali-scaled-e1587032729605.jpg",
                 "price" => 7.00,
                 "description" => "Dolce al cioccolato e mandorle, tipico dell'isola di Capri.",
                 "ingredients" => "Cioccolato fondente, mandorle, burro, zucchero, uova, zucchero a velo",
@@ -155,7 +155,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Bruschetta al Pomodoro",
-                "img" => "https://www.lacucinaitaliana.it/content/uploads/2021/07/Bruschetta-al-pomodoro.jpg",
+                "img" => "https://primochef.it/wp-content/uploads/2019/09/SH_bruschetta_al_pomodoro-1200x800.jpg.webp",
                 "price" => 6.00,
                 "description" => "Fette di pane tostato condite con pomodoro fresco, aglio, basilico e olio d'oliva.",
                 "ingredients" => "Pane, pomodori, aglio, basilico, olio extravergine d'oliva, sale",
@@ -164,7 +164,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Tagliata di Manzo",
-                "img" => "https://www.salepepe.it/files/2018/07/tagliata-di-manzo.jpg",
+                "img" => "https://www.melarossa.it/wp-content/uploads/2023/10/tagliata-di-manzo.jpg",
                 "price" => 22.00,
                 "description" => "Fette di manzo cotte alla griglia, servite con rucola e scaglie di Parmigiano.",
                 "ingredients" => "Manzo, rucola, Parmigiano Reggiano, olio extravergine d'oliva, sale, pepe",
@@ -173,7 +173,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Panna Cotta",
-                "img" => "https://www.giallozafferano.it/images/233-23327/Panna-cotta_450x300.jpg",
+                "img" => "https://static01.nyt.com/images/2023/08/10/multimedia/LH-Panna-Cotta-wczm/LH-Panna-Cotta-wczm-superJumbo.jpg",
                 "price" => 6.00,
                 "description" => "Dolce al cucchiaio a base di panna, zucchero e gelatina, servito con salsa ai frutti di bosco.",
                 "ingredients" => "Panna, zucchero, gelatina, vaniglia, salsa ai frutti di bosco",
@@ -182,7 +182,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Insalata Caprese",
-                "img" => "https://www.cucchiaio.it/content/cucchiaio/it/ricette/2010/03/ricetta-insalata-caprese/jcr:content/header-par/image_single.img.jpg/1524759346415.jpg",
+                "img" => "https://www.cuocicuoci.com/wp-content/uploads/2022/05/caprese.jpg",
                 "price" => 9.00,
                 "description" => "Un'insalata fresca e leggera con pomodori, mozzarella, basilico e olio d'oliva.",
                 "ingredients" => "Pomodori, mozzarella, basilico, olio extravergine d'oliva, sale, pepe",
@@ -191,7 +191,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Minestrone",
-                "img" => "https://www.ilgiornaledelcibo.it/wp-content/uploads/2018/11/minestrone.jpg",
+                "img" => "https://www.cuocicuoci.com/wp-content/uploads/2022/05/caprese.jpg",
                 "price" => 8.00,
                 "description" => "Zuppa di verdure miste con pasta o riso.",
                 "ingredients" => "Verdure miste, pasta o riso, brodo vegetale, olio extravergine d'oliva, sale, pepe",
@@ -200,7 +200,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Cotoletta alla Milanese",
-                "img" => "https://www.giallozafferano.it/images/168-16820/Cotoletta-alla-Milanese_450x300.jpg",
+                "img" => "https://www.giallozafferano.it/images/265-26509/Cotoletta-alla-milanese-della-nonna_650x433_wm.jpg",
                 "price" => 15.00,
                 "description" => "Costoletta di vitello impanata e fritta, servita con limone.",
                 "ingredients" => "Costoletta di vitello, farina, uova, pangrattato, burro, limone, sale",
@@ -209,7 +209,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Vitello Tonnato",
-                "img" => "https://www.salepepe.it/files/2015/05/vitello-tonnato.jpg",
+                "img" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2wm5yJjfERMnaO2knKvD81KDX-JOQCSzmZhthbzQqaA&s",
                 "price" => 14.00,
                 "description" => "Fettine di vitello servite con una salsa a base di tonno, capperi e maionese.",
                 "ingredients" => "Vitello, tonno, capperi, maionese, limone, acciughe, olio extravergine d'oliva",
@@ -218,7 +218,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Polpette al Sugo",
-                "img" => "https://primochef.it/wp-content/uploads/2018/03/SH_polpette_al_sugo-1200x800.jpg",
+                "img" => "https://www.alimentaitaly.com/img/cms/polpette%20sugo%20LARGE.jpg",
                 "price" => 10.00,
                 "description" => "Polpette di carne cotte in un sugo di pomodoro.",
                 "ingredients" => "Carne macinata, pane, latte, uova, parmigiano, prezzemolo, aglio, pomodoro, olio extravergine d'oliva",
@@ -227,7 +227,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Cannoli Siciliani",
-                "img" => "https://www.giallozafferano.it/images/ricette/137/13742/foto_hd/hd650x433_wm.jpg",
+                "img" => "https://www.molinocolombo.it/wp-content/uploads/2023/03/cannoli-siciliani.jpg",
                 "price" => 6.00,
                 "description" => "Dolce siciliano a base di cialda fritta ripiena di crema di ricotta.",
                 "ingredients" => "Ricotta, zucchero, cioccolato fondente, frutta candita, cialde per cannoli",
@@ -236,7 +236,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Risotto ai Funghi",
-                "img" => "https://www.giallozafferano.it/images/237-23760/Risotto-ai-funghi_780x520_wm.jpg",
+                "img" => "https://images.squarespace-cdn.com/content/v1/50106d5684aed4702b7242ed/1586960457052-Q6D241245NWYJQJQ34Q8/image-asset.jpeg",
                 "price" => 14.00,
                 "description" => "Risotto cremoso ai funghi porcini.",
                 "ingredients" => "Riso Carnaroli, funghi porcini, brodo vegetale, burro, Parmigiano Reggiano, cipolla, vino bianco",
@@ -245,7 +245,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Zuppa di Pesce",
-                "img" => "https://www.lacucinaitaliana.it/content/uploads/2018/10/31113542/zuppa-di-pesce.jpg",
+                "img" => "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/e34c7ab7-d78a-4e94-bf36-4e5c7e274977/Derivates/99921d0e-90bc-4484-8443-abd7a717ce4a.jpg",
                 "price" => 20.00,
                 "description" => "Varietà di pesce cotta in un brodo saporito.",
                 "ingredients" => "Pesce misto, pomodori, aglio, prezzemolo, olio extravergine d'oliva, sale, pepe",
@@ -254,7 +254,7 @@ class DishSeeder extends Seeder
             ],
             [
                 "name" => "Pasta alla Norma",
-                "img" => "https://www.giallozafferano.it/images/168-16819/Pasta-alla-Norma_450x300.jpg",
+                "img" => "https://www.cucchiaio.it/content/cucchiaio/it/ricette/2009/12/ricetta-pasta-norma/_jcr_content/header-par/image_single.img.jpg/1562754500727.jpg",
                 "price" => 12.00,
                 "description" => "Pasta condita con salsa di pomodoro, melanzane fritte e ricotta salata.",
                 "ingredients" => "Pasta, pomodori, melanzane, ricotta salata, basilico, aglio, olio extravergine d'oliva",
