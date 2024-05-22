@@ -16,6 +16,7 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" placeholder="Inserisci il tuo nome" maxlength="255" pattern="[A-Z a-z]+" title="Il tuo nome deve contenere solo lettere." class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autofocus required>
+                                <span id="name-error" class="text-danger" style="display: none">Il tuo nome deve contenere solo lettere.</span>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -30,6 +31,7 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" placeholder="Inserisci la tua E-mail" class="form-control @error('email') is-invalid @enderror" name="email" pattern="^[A-Za-z0-9.-']+@[A-Za-z.-]+.[A-Za-z]{2,}$" title="Inserisci una mail valida" value="{{ old('email') }}" required>
+                                <span id="email-error" class="text-danger" style="display: none">Inserisci una mail valida.</span>
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -191,6 +193,45 @@
 </div>
 
 <script>
+// SEZIONE VERIFICA NOME
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const name = document.getElementById('name');
+    const nameError = document.getElementById('name-error');
+
+    function validateField(input, errorElement, pattern) {
+        input.addEventListener('input', function() {
+            if (!pattern.test(input.value)) {
+                errorElement.style.display = 'block';
+            } else {
+                errorElement.style.display = 'none';
+            }
+        })
+    }
+
+    validateField(name, nameError, /^[A-Za-z\s]+$/)
+});
+
+// SEZIONE VERIFICA EMAIL
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const email = document.getElementById('email');
+    const emailError = document.getElementById('email-error');
+
+    function validateField(input, errorElement, pattern) {
+        input.addEventListener('input', function() {
+            if (!pattern.test(input.value)) {
+                errorElement.style.display = 'block';
+            } else {
+                errorElement.style.display = 'none';
+            }
+        })
+    }
+
+    validateField(email, emailError, /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/);
+});
+
+// SEZIONE VERIFICA PASSWORD
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
     const password = document.getElementById('password');
