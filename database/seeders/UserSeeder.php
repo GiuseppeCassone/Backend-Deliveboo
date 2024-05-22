@@ -40,6 +40,56 @@ class UserSeeder extends Seeder
                 'name' => 'Alex',
                 'email' => 'alex@gmail.com',
                 'password' => '123456789',
+            ],
+            [
+                'name' => 'Maria',
+                'email' => 'maria@gmail.com',
+                'password' => '12345',
+            ],
+            [
+                'name' => 'Luca',
+                'email' => 'luca@gmail.com',
+                'password' => '12345',
+            ],
+            [
+                'name' => 'Francesca',
+                'email' => 'francesca@gmail.com',
+                'password' => '12345',
+            ],
+            [
+                'name' => 'Antonio',
+                'email' => 'antonio@gmail.com',
+                'password' => '12345',
+            ],
+            [
+                'name' => 'Sara',
+                'email' => 'sara@gmail.com',
+                'password' => '12345',
+            ],
+            [
+                'name' => 'Marco',
+                'email' => 'marco@gmail.com',
+                'password' => '12345',
+            ],
+            [
+                'name' => 'Elena',
+                'email' => 'elena@gmail.com',
+                'password' => '12345',
+            ],
+            [
+                'name' => 'Fabio',
+                'email' => 'fabio@gmail.com',
+                'password' => '12345',
+            ],
+            [
+                'name' => 'Chiara',
+                'email' => 'chiara@gmail.com',
+                'password' => '12345',
+            ],
+            [
+                'name' => 'Davide',
+                'email' => 'davide@gmail.com',
+                'password' => '12345',
             ]
         ];
 

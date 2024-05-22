@@ -60,6 +60,46 @@ class RestaurantTypologySeeder extends Seeder
                 'restaurant_id' => 5,
                 'typology_id' => 10,
             ],
+            [
+                'restaurant_id' => 6,
+                'typology_id' => 10,
+            ],
+            [
+                'restaurant_id' => 7,
+                'typology_id' => 10,
+            ],
+            [
+                'restaurant_id' => 8,
+                'typology_id' => 10,
+            ],
+            [
+                'restaurant_id' => 9,
+                'typology_id' => 10,
+            ],
+            [
+                'restaurant_id' => 10,
+                'typology_id' => 10,
+            ],
+            [
+                'restaurant_id' => 11,
+                'typology_id' => 10,
+            ],
+            [
+                'restaurant_id' => 12,
+                'typology_id' => 8,
+            ],
+            [
+                'restaurant_id' => 13,
+                'typology_id' => 6,
+            ],
+            [
+                'restaurant_id' => 14,
+                'typology_id' => 9,
+            ],
+            [
+                'restaurant_id' => 15,
+                'typology_id' => 10,
+            ],
         ];
 
         // Associa le tipologie ai ristoranti
