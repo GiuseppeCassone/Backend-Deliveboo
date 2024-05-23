@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\DishController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
 use Illuminate\Support\Facades\Route;
@@ -44,5 +45,10 @@ Route::middleware(['auth', 'verified'])
             
             }
         );
+
+Route::get('braintree/token', [PaymentController::class, 'token']);
+
+Route::post('braintree/checkout', [PaymentController::class, 'checkout']);
+
 
 require __DIR__.'/auth.php';
