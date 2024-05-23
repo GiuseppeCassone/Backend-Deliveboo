@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\DishController;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\TypologyController;
+use App\Http\Controllers\Api\PaymentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,7 @@ Route::get('/restaurant/{id}', [RestaurantController::class, 'show']);
 Route::get('/typologies', [TypologyController::class, 'index']);
 
 Route::get('/dishes', [DishController::class, 'index']);
+
+Route::get('braintree/token', [PaymentController::class, 'token']);
+
+Route::post('braintree/checkout', [PaymentController::class, 'checkout']);

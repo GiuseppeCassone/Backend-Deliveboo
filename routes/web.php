@@ -46,9 +46,7 @@ Route::middleware(['auth', 'verified'])
             }
         );
 
-Route::get('braintree/token', [PaymentController::class, 'token']);
 
-Route::post('braintree/checkout', [PaymentController::class, 'checkout']);
 
 
 require __DIR__.'/auth.php';
