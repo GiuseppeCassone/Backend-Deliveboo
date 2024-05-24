@@ -18,6 +18,8 @@ class PaymentController extends Controller
             'publicKey' => config('braintree.publicKey'),
             'privateKey' => config('braintree.privateKey')
         ]);
+
+        
     }
 
     public function token()
@@ -28,6 +30,19 @@ class PaymentController extends Controller
 
     public function checkout(Request $request)
     {
+        
+
+        $orders = [
+            'customer_name' => $request->input('customer_name'),
+            'customer_lastname' => $request->input('customer_lastname'),
+            'customer_email' => $request->input('customer_email'),
+            'customer_address' => $request->input('customer_address'),
+            'customer_phone' => $request->input('customer_phone')
+        ];
+    
+        $dishes = $request->input('dishes'); // Assuming 'dishes' is an array of dish data
+        $totalCartPrice = $request->input('totalCartPrice');
+
         $amount = $request->input('order_total'); // L'importo che vuoi addebitare
         $nonce = $request->paymentMethodNonce;
 
