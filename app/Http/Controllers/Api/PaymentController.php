@@ -28,7 +28,7 @@ class PaymentController extends Controller
 
     public function checkout(Request $request)
     {
-        $amount = '10.00'; // L'importo che vuoi addebitare
+        $amount = $request->input('order_total'); // L'importo che vuoi addebitare
         $nonce = $request->paymentMethodNonce;
 
         $result = $this->gateway->transaction()->sale([
