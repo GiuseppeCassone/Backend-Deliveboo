@@ -20,104 +20,70 @@ class PaymentController extends Controller
             'publicKey' => config('braintree.publicKey'),
             'privateKey' => config('braintree.privateKey')
         ]);
-
-        
     }
 
     public function token()
     {
-        $clientToken = $this->gateway->clientToken()->generate();
-        return response()->json(['token' => $clientToken]);
+        try {
+            $clientToken = $this->gateway->clientToken()->generate();
+            return response()->json(['token' => $clientToken]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Unable to generate client token'], 500);
+        }
     }
 
-    public function checkout(OrderRequest $request)
+    public function checkout(Request $request)
     {
-
-        // $request->validated();
-        $data = $request->all();
-
-        $token = $request->input('token');
-        $customer_name = $request->input('customer_name');
-        $customer_lastname = $request->input('customer_lastname');
-        $customer_email = $request->input('customer_email');
-        $customer_phone = $request->input('customer_phone');
-        $customer_address = $request->input('customer_address');
-        $orderData = json_decode($request->input('orderData'), true);
-        $order_total = $request->input('order_total');
-        $amount = $request->input('amount');
-
-        $newOrder = $request->validate([
-            'customer_name' => 'required',
-            'customer_lastname' => 'required',
-            'customer_email' => 'required|email',
-            'customer_address' => 'required',
-            'customer_phone' => 'required|max:10',
-            'order_total' => 'required',
+        $validatedData = $request->validate([
+            'customer_name' => 'required|string|max:255',
+            'customer_lastname' => 'required|string|max:255',
+            'customer_email' => 'required|email|max:255',
+            'customer_address' => 'required|string|max:255',
+            'customer_phone' => 'required|string|max:10',
+            'order_total' => 'required|numeric',
+            'paymentMethodNonce' => 'required|string',
         ]);
 
-        // $amount = $request->input('order_total'); // L'importo che vuoi addebitare
-        $nonce = $request->paymentMethodNonce;
+        $nonce = $validatedData['paymentMethodNonce'];
+        $amount = $validatedData['order_total'];
 
-        $result = $this->gateway->transaction()->sale([
-            'amount' => $amount,
-            'paymentMethodNonce' => $nonce,
-            'options' => [
-                'submitForSettlement' => true
-            ]
-        ]);
-
-        if ($result->success) {
-            $data = [
-                'success' => true,
-                'message' => 'Transazione eseguita con successo!',
-                'customer_name' => $customer_name,
-                'customer_lastname' => $customer_lastname,
-                'customer_email' => $customer_email,
-                'customer_phone' => $customer_phone,
-                'customer_address' => $customer_address,
+        try {
+            $result = $this->gateway->transaction()->sale([
                 'amount' => $amount,
-            ];
-            
-            // salvataggio nuovo ordine nel DB
-            $order = new Order();
-            $order->fill($newOrder);
-            $order->save();
+                'paymentMethodNonce' => $nonce,
+                'options' => [
+                    'submitForSettlement' => true
+                ]
+            ]);
 
-            foreach ($orderData as $dish) {
-                // You can use the attach method if you have defined a many-to-many relationship in your Order model.
-                $order->dishes()->attach($dish['id'], ['quantity' => $dish['quantity']]);
+            if ($result->success) {
+                $order = new Order();
+                $order->fill($validatedData);
+                $order->save();
+
+                // Qui avviene il collegamento con la tabella dish_order
+                $orderData = json_decode($request->input('orderData'), true);
+                foreach ($orderData as $dish) {
+                    $order->dishes()->attach($dish['id'], ['quantity' => $dish['quantity']]);
+                }
+
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Transazione eseguita con successo!',
+                    'order' => $order
+                ], 200);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Transazione fallita!'
+                ], 401);
             }
-
-            return response()->json($data, 200);
-
-        } else {
-            $data = [
+        } catch (\Exception $e) {
+            return response()->json([
                 'success' => false,
-                'message' => 'Transazione fallita!'
-            ];
-
-            return response()->json($data, 401);
-        }
-
-        // $orders = [
-        //     'customer_name' => $request->input('customer_name'),
-        //     'customer_lastname' => $request->input('customer_lastname'),
-        //     'customer_email' => $request->input('customer_email'),
-        //     'customer_address' => $request->input('customer_address'),
-        //     'customer_phone' => $request->input('customer_phone')
-        // ];
-    
-        // $dishes = $request->input('dishes'); // Assuming 'dishes' is an array of dish data
-        // $totalCartPrice = $request->input('totalCartPrice');
-
-        
-
-        
-
-        if ($result->success) {
-            return response()->json(['success' => true, 'transaction' => $result->transaction]);
-        } else {
-            return response()->json(['success' => false, 'error' => $result->message], 500);
+                'message' => 'Errore durante la transazione!',
+                'error' => $e->getMessage()
+            ], 500);
         }
     }
 }
