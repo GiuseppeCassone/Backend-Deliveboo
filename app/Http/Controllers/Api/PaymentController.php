@@ -63,9 +63,24 @@ class PaymentController extends Controller
 
                 // Qui avviene il collegamento con la tabella dish_order
                 $orderData = json_decode($request->input('orderData'), true);
-                foreach ($orderData as $dish) {
-                    $order->dishes()->attach($dish['id'], ['quantity' => $dish['quantity']]);
+                if (!is_array($orderData)) {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Dati dell\'ordine non validi!',
+                    ], 400);
                 }
+
+                foreach ($orderData as $dish) {
+                    if (isset($dish['dish_id']) && isset($dish['quantity'])) {
+                        $order->dishes()->attach($dish['dish_id'], ['quantity' => $dish['quantity']]);
+                    } else {
+                        return response()->json([
+                            'success' => false,
+                            'message' => 'Formato dei dati dell\'ordine non valido!',
+                        ], 400);
+                    }
+                }
+
 
                 return response()->json([
                     'success' => true,
