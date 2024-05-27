@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\DishController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
@@ -42,6 +43,8 @@ Route::middleware(['auth', 'verified'])
             Route::resource('restaurant', RestaurantController::class);
 
             Route::resource('dishes', DishController::class);
+
+            Route::resource('orders', OrderController::class);
             
             }
         );

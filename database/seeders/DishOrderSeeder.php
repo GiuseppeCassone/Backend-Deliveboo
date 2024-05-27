@@ -15,13 +15,7 @@ class DishOrderSeeder extends Seeder
     {
         
         $DishOrderAssociations = [
-            [
-                'dish_id' => 1, 
-                'order_id' => 1, 
-                'quantity' => 2,
-                'price' => 12.50, 
-            ],
-            // ristorante 1
+          
             [
                 'dish_id' => 1, 
                 'order_id' => 1, 
@@ -98,30 +92,7 @@ class DishOrderSeeder extends Seeder
                 'quantity' => 5,
             ],
             // altri ristoranti
-            [
-                'dish_id' => 2, 
-                'order_id' => 2, 
-                'quantity' => 1,
-                'price' => 18.99, 
-            ],
-            [
-                'dish_id' => 3, 
-                'order_id' => 3, 
-                'quantity' => 3,
-                'price' => 9.95, 
-            ],
-            [
-                'dish_id' => 4, 
-                'order_id' => 4, 
-                'quantity' => 1,
-                'price' => 25.00, 
-            ],
-            [
-                'dish_id' => 5, 
-                'order_id' => 50, 
-                'quantity' => 4,
-                'price' => 7.75, 
-            ],
+           
         ];
 
         // Associa i pianni agli ordini
