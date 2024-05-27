@@ -13,10 +13,10 @@ class NewUserOrder extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $orderMail;
-    public function __construct($orderEmail)
+    public $orderEmailUser;
+    public function __construct($orderEmailUser)
     {
-        
+        $this->orderEmailUser = $orderEmailUser;
     }
 
     /**
@@ -32,12 +32,12 @@ class NewUserOrder extends Mailable
     /**
      * Get the message content definition.
      */
-    public function content(): Content
-    {
-        return new Content(
-            view: 'view.name',
-        );
-    }
+    // public function content(): Content
+    // {
+    //     return new Content(
+    //         view: 'emails.user-mail',
+    //     );
+    // }
 
     /**
      * Get the attachments for the message.

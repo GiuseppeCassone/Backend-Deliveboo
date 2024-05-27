@@ -84,8 +84,8 @@ class PaymentController extends Controller
                     }
                 }
 
-                Mail::to($order->customer_email)->send(new NewOrder($order));
-                Mail::to('progettoFinale-118@hotmail.com')->send(new NewUserOrder($order));
+                Mail::to($order->customer_email)->send(new NewUserOrder($order));
+                Mail::to('progettoFinale-118@hotmail.com')->send(new NewOrder($order));
 
                 return response()->json([
                     'success' => true,
