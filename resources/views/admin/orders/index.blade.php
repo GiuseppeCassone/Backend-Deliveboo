@@ -21,6 +21,7 @@
                 <td>{{$order->customer_email}}</td>
                 <td>{{$order->customer_address}}</td>
                 <td>{{$order->customer_phone}}</td>
+                <td>{{$order->order_total}}€</td>
                 </tr>
                 <!-- <tr> -->
                 <!-- <th scope="row">2</th>
