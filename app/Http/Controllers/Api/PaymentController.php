@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
 use App\Mail\NewOrder;
 use App\Mail\NewUserOrder;
+use App\Models\Dish;
 use App\Models\Order;
+use App\Models\Restaurant;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -45,6 +47,7 @@ class PaymentController extends Controller
             'customer_phone' => 'required|string|max:10',
             'order_total' => 'required|numeric',
             'paymentMethodNonce' => 'required|string',
+            // 'restaurantId' => 'required|exists:restaurants,id'
         ]);
 
         $nonce = $validatedData['paymentMethodNonce'];
@@ -84,8 +87,16 @@ class PaymentController extends Controller
                     }
                 }
 
+                $dishesIds = array_column($orderData, 'dish_id');
+
+                $restaurantId = Dish::whereIn('id', $dishesIds)->value('restaurant_id');
+                $restaurant = Restaurant::findOrFail($restaurantId);
+                // $restaurantEmail = $restaurant->user->email;
+
+
+
                 Mail::to($order->customer_email)->send(new NewUserOrder($order));
-                Mail::to('progettoFinale-118@hotmail.com')->send(new NewOrder($order));
+                Mail::to($restaurant->user->email)->send(new NewOrder($order));
 
                 return response()->json([
                     'success' => true,

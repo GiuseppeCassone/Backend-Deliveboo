@@ -13,12 +13,12 @@ class NewOrder extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $orderEmail;
+    public $lead;
 
 
-    public function __construct($orderEmail)
+    public function __construct($_lead)
     {
-        $this->orderEmail = $orderEmail;
+        $this->lead = $_lead;
     }
 
     /**
@@ -27,6 +27,7 @@ class NewOrder extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
+            replyTo: $this->lead->email,
             subject: 'Nuovo Ordine Ricevuto!',
         );
     }
@@ -34,12 +35,12 @@ class NewOrder extends Mailable
     /**
      * Get the message content definition.
      */
-    // public function content(): Content
-    // {
-    //     return new Content(
-    //         view: 'emails.restaurant-mail',
-    //     );
-    // }
+    public function content(): Content
+    {
+        return new Content(
+            view: 'emails.restaurant-mail',
+        );
+    }
 
     /**
      * Get the attachments for the message.
@@ -50,9 +51,9 @@ class NewOrder extends Mailable
     {
         return [];
     }
-    public function build()
-    {
-        return $this->view('emails.restaurant-mail')
-                    ->subject('Conferma Ordine');
-    }
+    // public function build()
+    // {
+    //     return $this->view('emails.restaurant-mail')
+    //                 ->subject('Conferma Ordine');
+    // }
 }

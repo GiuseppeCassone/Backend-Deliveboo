@@ -13,10 +13,10 @@ class NewUserOrder extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $orderEmailUser;
-    public function __construct($orderEmailUser)
+    public $lead;
+    public function __construct($_lead)
     {
-        $this->orderEmailUser = $orderEmailUser;
+        $this->lead = $_lead;
     }
 
     /**
@@ -25,6 +25,7 @@ class NewUserOrder extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
+            replyTo: $this->lead->customer_email,
             subject: 'New User Order',
         );
     }
@@ -32,12 +33,12 @@ class NewUserOrder extends Mailable
     /**
      * Get the message content definition.
      */
-    // public function content(): Content
-    // {
-    //     return new Content(
-    //         view: 'emails.user-mail',
-    //     );
-    // }
+    public function content(): Content
+    {
+        return new Content(
+            view: 'emails.user-mail',
+        );
+    }
 
     /**
      * Get the attachments for the message.
@@ -48,9 +49,9 @@ class NewUserOrder extends Mailable
     {
         return [];
     }
-    public function build()
-    {
-        return $this->view('emails.user-mail')
-                    ->subject('Conferma Ordine');
-    }
+    // public function build()
+    // {
+    //     return $this->view('emails.user-mail')
+    //                 ->subject('Conferma Ordine');
+    // }
 }

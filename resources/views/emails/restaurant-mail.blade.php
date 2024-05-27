@@ -1,13 +1,12 @@
-<x-mail::message>
-     Ciao {{ $orderEmail }}
+
+     Ciao {{ $lead }}
 
     Hai ricevuto un nuovo ordine!
 
     **Da:**
 
-    Nome: {{ $order['customer_name'] }}  
-    Email: {{ $order['email'] }}  
-    Numero: {{ $order['phone'] }}  
-    Via: {{ $order['address'] }}  
-    Totale: {{ $order['price'] }} €
-</x-mail::message>
+    Nome: {{ $lead['customer_name'] }}  
+    Email: {{ $lead['email'] }}  
+    Numero: {{ $lead['phone'] }}  
+    Via: {{ $lead['address'] }}  
+    Totale: {{ $lead['price'] }} €

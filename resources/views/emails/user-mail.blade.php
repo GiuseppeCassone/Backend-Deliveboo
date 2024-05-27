@@ -1,13 +1,12 @@
-<x-mail::message>
-     Ciao {{ $orderEmailUser['customer_name'] }}
+
+     Ciao {{ $lead['customer_name'] }}
 
     Il tuo ordine è stato inviato.
 
     Ecco il ripilogo:
     
-    Nome: {{ $orderEmailUser['customer_name'] }}  
-    Email: {{ $orderEmailUser['customer_email'] }}  
-    Numero: {{ $orderEmailUser['customer_phone'] }}  
-    Via: {{ $orderEmailUser['customer_address'] }}  
-    Totale: {{ $orderEmailUser['order_total'] }} €
-</x-mail::message>
+    Nome: {{ $lead['customer_name'] }}  
+    Email: {{ $lead['customer_email'] }}  
+    Numero: {{ $lead['customer_phone'] }}  
+    Via: {{ $lead['customer_address'] }}  
+    Totale: {{ $lead['order_total'] }} €
