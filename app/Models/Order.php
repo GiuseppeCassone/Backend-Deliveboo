@@ -16,6 +16,7 @@ class Order extends Model
         'customer_phone',
         'customer_address',
         'order_total',
+        'created_at'
     ];
 
     // relazione dishes con orders (molti-a-molti)

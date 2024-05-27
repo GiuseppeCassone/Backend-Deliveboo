@@ -21,6 +21,7 @@ class OrderSeeder extends Seeder
                 'customer_address' => '123 Main St, Springfield',
                 'customer_phone' => '1234567890',
                 'order_total' => 29.99,
+                'created_at'=> '2023-12-20 13:12:00'
             ],
             [
                 'customer_name' => 'Jane',
@@ -29,6 +30,8 @@ class OrderSeeder extends Seeder
                 'customer_address' => '456 Elm St, Springfield',
                 'customer_phone' => '0987654321',
                 'order_total' => 45.50,
+                'created_at'=> '2023-11-20 12:12:00'
+
             ],
             [
                 'customer_name' => 'Bob',
@@ -37,6 +40,8 @@ class OrderSeeder extends Seeder
                 'customer_address' => '789 Oak St, Springfield',
                 'customer_phone' => '1122334455',
                 'order_total' => 32.75,
+                'created_at'=> '2023-10-20 11:12:00'
+                
             ],
             [
                 'customer_name' => 'Alice',
@@ -45,6 +50,8 @@ class OrderSeeder extends Seeder
                 'customer_address' => '321 Pine St, Springfield',
                 'customer_phone' => '2233445566',
                 'order_total' => 27.80,
+                'created_at'=> '2023-09-20 10:12:00'
+
             ],
             [
                 'customer_name' => 'Charlie',
@@ -53,6 +60,8 @@ class OrderSeeder extends Seeder
                 'customer_address' => '654 Cedar St, Springfield',
                 'customer_phone' => '3344556677',
                 'order_total' => 58.90,
+                'created_at'=> '2023-08-20 09:12:00'
+
             ],
         ];
 
@@ -66,6 +75,7 @@ class OrderSeeder extends Seeder
             $newOrder->customer_address = $order['customer_address'];
             $newOrder->customer_phone = $order['customer_phone'];
             $newOrder->order_total = $order['order_total'];
+            $newOrder->created_at = $order['created_at'];
 
             $newOrder->save();
 
