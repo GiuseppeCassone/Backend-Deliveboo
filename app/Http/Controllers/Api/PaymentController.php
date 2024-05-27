@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
+use App\Mail\NewOrder;
+use App\Mail\NewUserOrder;
 use App\Models\Order;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -81,6 +84,8 @@ class PaymentController extends Controller
                     }
                 }
 
+                Mail::to($order->customer_email)->send(new NewOrder($order));
+                Mail::to('progettoFinale-118@hotmail.com')->send(new NewUserOrder($order));
 
                 return response()->json([
                     'success' => true,
