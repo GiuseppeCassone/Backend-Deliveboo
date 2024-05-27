@@ -3,7 +3,7 @@
 @section('content')
     <div class="container py-5">
         <div class="card mb-3">
-            <img src="{{asset('storage/' . $dish->img)}}" class="card-img-top" alt="immagine">
+            <img src="{{str_contains($dish->img, 'https') ? $dish->img : asset('storage/' . $dish->img)}}" class="card-img-top" alt="immagine">
             <div class="card-body">
                 <h5 class="card-title">Nome del piatto: {{ $dish->name }}</h5>
                 <p class="card-text">Descrizione:<br>{{ $dish->description }}</p>
