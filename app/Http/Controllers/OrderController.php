@@ -16,21 +16,21 @@ class OrderController extends Controller
     {
         $userId = Auth::id();
 
-        // Trova il ristorante di proprietà dell'utente autenticato
-        $restaurant = Restaurant::where('id', 1)->where('user_id', $userId)->first();
+    // Trova i ristoranti di proprietà dell'utente autenticato
+    $restaurants = Restaurant::where('user_id', $userId)->pluck('id');
     
-        // Controlla se il ristorante esiste e se l'utente autenticato ne è il proprietario
-        if (!$restaurant) {
-            abort(401); // Non autorizzato
-        }
+    // Controlla se l'utente possiede almeno un ristorante
+    if ($restaurants->isEmpty()) {
+        abort(401); // Non autorizzato
+    }
+
+    // Recupera gli ordini relativi ai piatti dei ristoranti dell'utente autenticato
+    $orders = Order::whereHas('dishes', function ($query) use ($restaurants) {
+        $query->whereIn('restaurant_id', $restaurants);
+    })->with('dishes')->orderBy('created_at')->get();
     
-        // Recupera gli ordini relativi ai piatti del ristorante
-        $orders = Order::whereHas('dishes', function ($query) use ($restaurant) {
-            $query->where('restaurant_id', $restaurant->id);
-        })->with('dishes')->orderBy('created_at', 'desc');
-    
-        // Restituisce la vista degli ordini
-        return view('admin.orders.index', compact('orders'));
+    // Restituisce la vista degli ordini
+    return view('admin.orders.index', compact('orders'));
     }
 
     /**

@@ -15,6 +15,7 @@
         <p class="card-text">P.Iva:<br>{{$restaurant->vat}}</p>
         <p class="card-text">Numero di Telefono:<br>{{$restaurant->phone_number}}</p>
         <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Visualizza il tuo menu</a>
+        <a href="{{ route('admin.orders.index') }}" class="btn btn-primary">Visualizza i tuoi ordini</a>
       </div>
     </div>
 
