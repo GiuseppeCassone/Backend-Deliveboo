@@ -9,7 +9,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Id</th>
+                <th scope="col">Data</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Cognome</th>
                 <th scope="col">Email</th>
@@ -21,7 +21,7 @@
         <tbody>
                 @foreach ($orders as $order)
                 <tr>
-                <th scope="row">{{$order->id}}</th>
+                <th scope="row">{{$order->created_at}}</th>
                 <td>{{$order->customer_name}}</td>
                 <td>{{$order->customer_lastname}}</td>
                 <td>{{$order->customer_email}}</td>
