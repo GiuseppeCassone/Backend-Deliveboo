@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-4">
+<div class="p-4 personal_color2 personal_width">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Registrati') }}</div>
+            <div class="card personal_color3">
+                <div class="card-header">{{ __('Diventa collaboratore di WOW Delive, non te ne pentirai!') }}</div>
 
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}">
@@ -180,7 +180,7 @@
 
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-light">
                                     {{ __('Registrati alla nostra piattaforma') }}
                                 </button>
                             </div>
@@ -267,4 +267,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
+<style>
+
+    .personal_color2 {
+        background-color: #40A578;
+    }
+
+    .personal_height {
+        height: calc(100vh - 130px);
+    }
+
+    .personal_width {
+        width: 100wh;
+    }
+
+    .personal_color3 {
+        background-color: #9DDE8B;
+    }
+
+</style>
 @endsection

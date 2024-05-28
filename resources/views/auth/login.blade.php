@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-4">
+<div class="p-4 personal_color2 personal_height personal_width">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card personal_color3">
                 <div class="card-header">{{ __('Accesso') }}</div>
 
                 <div class="card-body">
@@ -53,13 +53,13 @@
 
                         <div class="mb-4 row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-light">
                                     {{ __('Accesso') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Hai dimenticato la password?') }}
+                                <a class="btn" href="{{ route('password.request') }}">
+                                    {{ __('Hai dimenticato la password? (BRAVO)') }}
                                 </a>
                                 @endif
                             </div>
@@ -70,5 +70,25 @@
         </div>
     </div>
 </div>
+
+<style>
+
+    .personal_color2 {
+        background-color: #40A578;
+    }
+
+    .personal_height {
+        height: calc(100vh - 130px);
+    }
+
+    .personal_width {
+        width: 100wh;
+    }
+
+    .personal_color3 {
+        background-color: #9DDE8B;
+    }
+
+</style>
 @endsection
 

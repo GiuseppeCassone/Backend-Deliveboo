@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<div  class="personal_color2">
     <div class="container py-5">
-        <div class="card mb-3">
+        <div class="card mb-3 personal_color3 text-light">
             <img src="{{str_contains($dish->img, 'https') ? $dish->img : asset('storage/' . $dish->img)}}" class="card-img-top" alt="immagine">
             <div class="card-body">
                 <h5 class="card-title">Nome del piatto: {{ $dish->name }}</h5>
@@ -54,4 +55,25 @@
         </div>
     </div>
     </div>
+</div>
+
+    <style>
+
+        .personal_color2 {
+            background-color: #40A578;
+        }
+      
+        .personal_height {
+            height: calc(100vh - 130px);
+        }
+      
+        .personal_width {
+            width: 100wh;
+        }
+      
+        .personal_color3 {
+            background-color: #006769; 
+        }
+      
+      </style>
 @endsection
