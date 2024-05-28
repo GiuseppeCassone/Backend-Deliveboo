@@ -21,6 +21,6 @@ class Order extends Model
 
     // relazione dishes con orders (molti-a-molti)
     public function dishes() {
-        return $this->belongsToMany(Dish::class);
+        return $this->belongsToMany(Dish::class)->withPivot('quantity');
     }
 }

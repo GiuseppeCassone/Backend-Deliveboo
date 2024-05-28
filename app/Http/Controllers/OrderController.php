@@ -52,9 +52,28 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($orderId)
     {
-        //
+        $userId = Auth::id();
+
+        // Trova l'ordine con l'ID specificato e carica i piatti associati
+        $order = Order::with('dishes')->find($orderId);
+    
+        if (!$order) {
+            abort(404); // Ordine non trovato
+        }
+    
+        // Controlla se l'utente autenticato è il proprietario del ristorante a cui appartiene l'ordine
+        $restaurantIds = $order->dishes->pluck('restaurant_id')->unique();
+    
+        $userRestaurants = Restaurant::where('user_id', $userId)->whereIn('id', $restaurantIds)->pluck('id');
+    
+        if ($userRestaurants->isEmpty()) {
+            abort(401); // Non autorizzato
+        }
+    
+        // Restituisce la vista del dettaglio dell'ordine
+        return view('admin.orders.show', compact('order'));
     }
 
     /**

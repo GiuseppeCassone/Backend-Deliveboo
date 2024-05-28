@@ -6,6 +6,10 @@
 
     <h1>Riepilogo Ordini</h1>
 
+    @if($orders->isEmpty())
+        <p>Nessun Ordine</p>
+
+    @else
     <table class="table">
         <thead>
             <tr>
@@ -16,6 +20,7 @@
                 <th scope="col">Indirizzo</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Totale Ordine</th>
+                <th scope="col">Dettagli</th>
             </tr>
         </thead>
         <tbody>
@@ -28,22 +33,12 @@
                 <td>{{$order->customer_address}}</td>
                 <td>{{$order->customer_phone}}</td>
                 <td>{{$order->order_total}}€</td>
+                <td><a class="btn btn-success" href="{{route('admin.orders.show', $order)}}">Dettagli</a></td>
                 </tr>
-                <!-- <tr> -->
-                <!-- <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                </tr> -->
                 @endforeach
             </tbody>
         </table>
-            
+    @endif       
            
     
 </div>
