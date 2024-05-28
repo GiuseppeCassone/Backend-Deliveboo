@@ -2,14 +2,20 @@
 
 @section('content')
 
-<div class="container">
+<div class="container py-4">
+
+    <h1>Riepilogo Ordini</h1>
+
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Indirizzo</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Totale Ordine</th>
             </tr>
         </thead>
         <tbody>
