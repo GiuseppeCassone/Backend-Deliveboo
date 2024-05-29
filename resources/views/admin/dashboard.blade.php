@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="personal_color2 personal_height d-flex align-items-center justify-content-center ">
+<div class="personal_height d-flex align-items-center justify-content-center ">
     <div class="container ">
-        <h2 class="fs-4 text-light py-4 text-center animate__animated animate__fadeInDown">
+        <h2 class="fs-4 text-dark py-4 text-center animate__animated animate__fadeInDown">
             {{ __('Dashboard') }}
         </h2>
         <div class="row justify-content-center">
@@ -21,7 +21,7 @@
                                 {{ session('status') }}
                             </div>
                             @endif
-                            <a href="{{route('admin.restaurant.index')}}" class="btn btn-light fw-bold">Vai al tuo ristorante</a>
+                            <a href="{{route('admin.restaurant.index')}}" class="btn btn-light">Vai al tuo ristorante</a>
                         </div>
                     </div>
                 </div>
@@ -48,19 +48,6 @@
         border-radius: 15px;
         padding: 20px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    }
-
-    .btn-light {
-        background-color: #f8f9fa;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 20px;
-        transition: background-color 0.3s, transform 0.3s;
-    }
-
-    .btn-light:hover {
-        background-color: #e2e6ea;
-        transform: scale(1.10);
     }
 
 </style>

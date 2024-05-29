@@ -1,30 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="personal_color2">
+<div class="container py-5 d-flex justify-content-center flex-column align-items-center">
 
+  <h1 class="mb-2 text-dark mb-3">Bentornato {{$user->name}}</h1>
 
-  <div class="container py-5">
-
-      <h1 class="mb-2 text-light">Bentornato {{$user->name}}</h1>
-
-      <div class="card mb-3 personal_color3 text-light">
-      
-        <img src="{{str_contains($restaurant->img, 'https') ? $restaurant->img : asset('storage/' . $restaurant->img)}}" class="card-img-top" alt="...">
+  <div class="card mb-3 personal_color3 text-light w-75">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{str_contains($restaurant->img, 'https') ? $restaurant->img : asset('storage/' . $restaurant->img)}}" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
+      </div>
+      <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{$restaurant->name}}</h5>
           <p class="card-text"><strong>Descrizione:</strong><br>{{$restaurant->description}}</p>
-          <p class="card-text"><strong>Indirizzo:</strong><br>{{$restaurant->address}}</p>
-          <p class="card-text"><strong>P. Iva:</strong><br>{{$restaurant->vat}}</p>
-          <p class="card-text"><strong>Numero di Telefono:</strong><br>{{$restaurant->phone_number}}</p>
-          <a href="{{ route('admin.dishes.index') }}" class="btn btn-light">Visualizza il tuo menu</a>
-          <a href="{{ route('admin.orders.index') }}" class="btn btn-warning">Visualizza i tuoi ordini</a>
+        <p class="card-text"><strong>Indirizzo:</strong><br>{{$restaurant->address}}</p>
+        <p class="card-text"><strong>P. Iva:</strong><br>{{$restaurant->vat}}</p>
+        <p class="card-text"><strong>Numero di Telefono:</strong><br>{{$restaurant->phone_number}}</p>
+        <a href="{{ route('admin.dishes.index') }}" class="btn btn-light">Visualizza il tuo menu</a>
+        <a href="{{ route('admin.orders.index') }}" class="btn btn-warning">Visualizza i tuoi ordini</a>
         </div>
       </div>
-
-      
+    </div>
   </div>
+
+    
 </div>
+
 
 <style>
 

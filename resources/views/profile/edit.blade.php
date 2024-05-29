@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="personal_color2 p-4">
-    <h2 class="fs-4 text-secondary p-4 text-light">
+<div class="p-4">
+    <h2 class="fs-4 text-secondary p-4 text-dark">
         {{ __('Profilo personale') }}
     </h2>
     <div class="card p-4 mb-4 bg-white shadow rounded-lg">
