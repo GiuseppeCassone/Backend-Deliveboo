@@ -11,10 +11,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("{{ route('orders.statistics.data') }}")
+    fetch("{{ route('admin.orders.statistics.data') }}")
         .then(response => response.json())
         .then(data => {
-            const labels = data.map(item => ${item.month}/${item.year});
+            const labels = data.map(item => '${item.month}/${item.year}');
             const orderCounts = data.map(item => item.order_count);
             const totalSales = data.map(item => item.total_sales);
 

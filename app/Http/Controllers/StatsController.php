@@ -23,7 +23,7 @@ class StatsController extends Controller
             DB::raw('YEAR(created_at) as year'),
             DB::raw('MONTH(created_at) as month'),
             DB::raw('COUNT(*) as order_count'),
-            DB::raw('SUM(order_total) as order_total'),
+            DB::raw('SUM(order_total) as total'),
 
         )
         ->whereHas('dishes', function($query) use ($restaurants){
@@ -31,8 +31,8 @@ class StatsController extends Controller
             $query->whereIn('restaurant_id', $restaurants);
         })
         ->groupBy('year', 'month')
-        ->orderBy('month', 'desc')
         ->orderBy('year', 'desc')
+        ->orderBy('month', 'desc')
         ->get();
 
         return response()->json($orderStats);
@@ -43,6 +43,7 @@ class StatsController extends Controller
 
     public function ShowStats(){
         
+
         return view('admin.orders.statistics.index');
     }
 }
