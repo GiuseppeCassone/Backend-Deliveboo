@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="p-4 personal_color2 personal_height personal_width d-flex align-items-center justify-content-center">
-    <div class="card personal_color3 animate__animated animate__fadeIn">
+<div class="p-4 personal_height personal_width d-flex align-items-center justify-content-center">
+    <div class="card personal_color3 text-light animate__animated animate__fadeIn">
         <div class="card-header text-center fw-bold fs-4">{{ __('Accesso') }}</div>
 
         <div class="card-body">
@@ -64,10 +64,6 @@
 </div>
 
 <style>
-    .personal_color2 {
-        background: linear-gradient(135deg, #40A578, #1B8761);
-    }
-
     .personal_height {
         height: calc(100vh - 130px);
     }
@@ -77,28 +73,9 @@
     }
 
     .personal_color3 {
-        background-color: #9DDE8B;
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #006769;
     }
 
-    .card-header {
-        background-color: #40A578;
-        color: white;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        font-weight: bold;
-        padding: 15px;
-    }
-
-    .card-body {
-        padding: 30px;
-    }
-
-    .form-control {
-        border-radius: 5px;
-    }
 
     .btn-light {
         background-color: #40A578;
@@ -116,7 +93,6 @@
 
     .btn-link {
         color: #40A578;
-        font-weight: bold;
     }
 
     .btn-link:hover {

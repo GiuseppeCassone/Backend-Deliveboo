@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="p-4 personal_color2 personal_width">
+<div class="p-4 personal_width">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card personal_color3">
-                <div class="card-header">{{ __('Diventa collaboratore di WOW Delive, non te ne pentirai!') }}</div>
+            <div class="card personal_color3 text-light">
+                <div class="card-header text-center fw-bold fs-4">{{ __('Diventa collaboratore di WOW Delive, non te ne pentirai!') }}</div>
 
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}">
@@ -282,8 +282,22 @@ document.addEventListener('DOMContentLoaded', function () {
         width: 100wh;
     }
 
+    .btn-light {
+        background-color: #40A578;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-light:hover {
+        background-color: #1B8761;
+    }
+
     .personal_color3 {
-        background-color: #9DDE8B;
+        background-color: #006769;
     }
 
 </style>
