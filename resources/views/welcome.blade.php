@@ -58,6 +58,5 @@
     }
 </style>
 
-<!-- Aggiungi queste righe alla fine della sezione content per includere le animazioni -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 @endsection
