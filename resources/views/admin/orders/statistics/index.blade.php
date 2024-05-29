@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             const labels = data.map(item => `${item.month}/${item.year}`);
             const orderCounts = data.map(item => item.order_count);
-            const totalSales = data.map(item => item.total_sales);
+            const totalSales = data.map(item => item.total);
 
             const ctx = document.getElementById('orderChart').getContext('2d');
             new Chart(ctx, {
