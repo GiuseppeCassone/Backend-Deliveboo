@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="personal_color2 personal_height d-flex align-items-center justify-content-center">
-    <div class="container">
+<div class="personal_color2 personal_height d-flex align-items-center justify-content-center ">
+    <div class="container ">
         <h2 class="fs-4 text-light py-4 text-center animate__animated animate__fadeInDown">
             {{ __('Dashboard') }}
         </h2>
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <div class="card personal_color3 text-light animate__animated animate__fadeInUp">
+                <div class="card personal_color3 text-light animate__animated animate__fadeIn">
                     <div class="card-header text-center fw-bold fs-4">{{ __('Dashboard utente') }}</div>
                     <div class="card-body">
                         <p class="fs-5 m-3">
@@ -21,7 +21,7 @@
                                 {{ session('status') }}
                             </div>
                             @endif
-                            <a href="{{route('admin.restaurant.index')}}" class="btn btn-light fw-bold animate__animated animate__fadeInLeft">Vai al tuo ristorante</a>
+                            <a href="{{route('admin.restaurant.index')}}" class="btn btn-light fw-bold">Vai al tuo ristorante</a>
                         </div>
                     </div>
                 </div>
@@ -47,12 +47,7 @@
     .card {
         border-radius: 15px;
         padding: 20px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s;
-    }
-
-    .card:hover {
-        transform: scale(1.02);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
     .btn-light {
@@ -65,19 +60,11 @@
 
     .btn-light:hover {
         background-color: #e2e6ea;
-        transform: translateX(5px);
+        transform: scale(1.10);
     }
 
-    .animate__fadeInDown {
-        animation: fadeInDown 0.5s;
-    }
-
-    .animate__fadeInUp {
-        animation: fadeInUp 0.5s;
-    }
-
-    .animate__fadeInLeft {
-        animation: fadeInLeft 0.5s;
-    }
 </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 @endsection

@@ -7,7 +7,7 @@
         <ul class="list-unstyled animate__animated animate__fadeInDown ">
             @foreach ($dishes as $dish)
                 <li class="d-flex justify-content-between py-2 text-light">
-                    {{ $dish->name }}
+                    <strong>{{ $dish->name }}</strong>
                     <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-light">Visualizza dettagli del piatto</a>
                 </li>
                 <hr class="mb-3">

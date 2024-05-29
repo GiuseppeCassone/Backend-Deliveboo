@@ -3,45 +3,60 @@
 @section('content')
 <div  class="personal_color2">
     <div class="container py-5">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{str_contains($dish->img, 'https') ? $dish->img : asset('storage/' . $dish->img)}}" class="img-fluid rounded-start" alt="immagine">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title fs-1">{{ $dish->name }}</h5>
+                    <p class="card-text"><strong>Descrizione del piatto:</strong><br>{{ $dish->description }}</p>
+                    <p class="card-text"><strong>Ingredienti:</strong><br>{{ $dish->ingredients }}</p>
+                    <p class="card-text"><strong>Prezzo:</strong><br>€{{ $dish->price }}</p>
+                    <p class="card-text"><strong>Disponibilità del piatto:</strong><br>{{ $dish->is_visible? 'Disponibile' : 'Non disponibile' }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         <div class="card mb-3 personal_color3 text-light">
             <img src="{{str_contains($dish->img, 'https') ? $dish->img : asset('storage/' . $dish->img)}}" class="card-img-top" alt="immagine">
             <div class="card-body">
-                <h5 class="card-title">Nome del piatto: {{ $dish->name }}</h5>
-                <p class="card-text">Descrizione:<br>{{ $dish->description }}</p>
-                <p class="card-text">Ingredienti:<br>{{ $dish->ingredients }}</p>
-                <p class="card-text">Prezzo del piatto:<br>€ {{ $dish->price }}</p>
-                <p class="card-text">Disponibilità del piatto:<br>{{ $dish->is_visible? 'Disponibile' : 'Non disponibile' }}</p>
+                <h5 class="card-title fs-1">{{ $dish->name }}</h5>
+                <p class="card-text"><strong>Descrizione del piatto:</strong><br>{{ $dish->description }}</p>
+                <p class="card-text"><strong>Ingredienti:</strong><br>{{ $dish->ingredients }}</p>
+                <p class="card-text"><strong>Prezzo:</strong><br>€{{ $dish->price }}</p>
+                <p class="card-text"><strong>Disponibilità del piatto:</strong><br>{{ $dish->is_visible? 'Disponibile' : 'Non disponibile' }}</p>
             </div>
-        </div>
 
-        <!-- <a href="{{route('admin.dishes.edit', $dish)}}">Modifica Piatto</a> -->
-        <div class="py-5">
+            <!-- <a href="{{route('admin.dishes.edit', $dish)}}">Modifica Piatto</a> -->
+        <div class="p-3">
             <a href="{{route('admin.dishes.edit', $dish)}}" class="btn btn-warning">Modifica</a>
                     
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Elimina
             </button>
 
-            <a href="{{route('admin.dishes.index')}}" class="btn btn-primary">Torna ai tuoi piatti</a>
+            <a href="{{route('admin.dishes.index')}}" class="btn personal_button">Torna ai tuoi piatti</a>
         </div>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered ">
-            <div class="modal-content">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content personal_color3 text-light">
 
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina il piatto</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <div class="modal-body">
-                    Sei sicuro di voler eliminare il piatto? "{{$dish->name}}"
+                <div class="modal-body ">
+                    Sei sicuro di voler eliminare il piatto "{{$dish->name}}"?
                 </div>
 
 
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Annulla</button>
                     <form action="{{route('admin.dishes.destroy', $dish)}}" method="POST">
                         @csrf
                         @method("DELETE")
@@ -53,6 +68,9 @@
 
             </div>
         </div>
+        </div>
+
+        
     </div>
     </div>
 </div>
@@ -73,6 +91,14 @@
       
         .personal_color3 {
             background-color: #006769; 
+        }
+
+        .card {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .personal_button {
+            background-color: #9DDE8B;
         }
       
       </style>

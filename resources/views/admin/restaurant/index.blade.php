@@ -13,10 +13,10 @@
         <img src="{{str_contains($restaurant->img, 'https') ? $restaurant->img : asset('storage/' . $restaurant->img)}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{$restaurant->name}}</h5>
-          <p class="card-text">Descrizione:<br>{{$restaurant->description}}</p>
-          <p class="card-text">Indirizzo:<br>{{$restaurant->address}}</p>
-          <p class="card-text">P.Iva:<br>{{$restaurant->vat}}</p>
-          <p class="card-text">Numero di Telefono:<br>{{$restaurant->phone_number}}</p>
+          <p class="card-text"><strong>Descrizione:</strong><br>{{$restaurant->description}}</p>
+          <p class="card-text"><strong>Indirizzo:</strong><br>{{$restaurant->address}}</p>
+          <p class="card-text"><strong>P. Iva:</strong><br>{{$restaurant->vat}}</p>
+          <p class="card-text"><strong>Numero di Telefono:</strong><br>{{$restaurant->phone_number}}</p>
           <a href="{{ route('admin.dishes.index') }}" class="btn btn-light">Visualizza il tuo menu</a>
           <a href="{{ route('admin.orders.index') }}" class="btn btn-warning">Visualizza i tuoi ordini</a>
         </div>
@@ -42,6 +42,10 @@
 
   .personal_color3 {
     background-color: #006769; 
+  }
+
+  .card {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   }
 
 </style>
