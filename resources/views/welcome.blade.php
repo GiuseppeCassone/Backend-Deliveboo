@@ -15,10 +15,10 @@
             @endif
             @else
             <div class="btn-group">
-                <a class="btn btn-light" href="{{ url('dashboard') }}">{{__('Il tuo ristorante')}}</a>
-                <a class="btn btn-light" href="{{ url('profile') }}">{{__('Il tuo profilo')}}</a>
+                <a class="btn btn-light" href="{{ url('dashboard') }}">{{__('Vai al tuo ristorante')}}</a>
+                <a class="btn btn-light" href="{{ url('profile') }}">{{__('Vai al tuo profilo')}}</a>
                 <a class="btn btn-light" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                    {{ __('Esegui il logout') }}
                 </a>
             </div>
             
