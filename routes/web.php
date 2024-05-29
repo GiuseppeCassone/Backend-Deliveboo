@@ -6,6 +6,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\StatsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,9 +35,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'verified'])
-        ->name('admin.')
-        ->prefix('admin')
-        ->group(function () {
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(
+        function () {
 
             Route::get('/', [DashboardController::class, 'index']);
 
@@ -45,11 +47,14 @@ Route::middleware(['auth', 'verified'])
             Route::resource('dishes', DishController::class);
 
             Route::resource('orders', OrderController::class);
-            
-            }
-        );
+
+            Route::get('/orders/statistics/data', [StatsController::class, 'OrderStats'])->name('orders.statistics.data');
+            Route::get('/orders/statistics', [StatsController::class, 'ShowStats'])->name('orders.statistics.page');
+
+        }
+    );
 
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
