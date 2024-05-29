@@ -7,7 +7,7 @@
 
       <h1>Modifica il seguente piatto</h1>
 
-      <form action="{{route('admin.dishes.update', $dish)}}" method="POST" enctype="multipart/form-data">
+      <form class="animate__animated animate__fadeInDown" action="{{route('admin.dishes.update', $dish)}}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('PUT')
 
@@ -99,5 +99,8 @@
   }
 
 </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 
 @endsection

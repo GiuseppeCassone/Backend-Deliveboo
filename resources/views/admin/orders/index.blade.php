@@ -7,7 +7,7 @@
 
         <h1>Riepilogo Ordini</h1>
 
-        <table class="table">
+        <table class="table animate__animated animate__fadeInDown mt-3">
             <thead>
                 <tr>
                     <th scope="col">Data</th>
@@ -65,6 +65,6 @@
     }
 </style>
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 @endsection

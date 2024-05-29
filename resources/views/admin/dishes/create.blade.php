@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="personal_color2 personal_height">
-    <div class="container p-4 text-light">
-        <h1>inserisci un nuovo piatto</h1>
+    <div class="container p-4 text-light animate__animated animate__fadeInDown">
+        <h1>Inserisci un nuovo piatto</h1>
 
         <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data" id="dish-form">
             @csrf
@@ -170,5 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   
   </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 @endsection
