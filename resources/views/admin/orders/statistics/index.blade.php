@@ -4,6 +4,8 @@
 <div class="container">
     <h1>Order Statistics</h1>
     <canvas id="orderChart"></canvas>
+
+    <a class="btn btn-primary" href="{{route('admin.orders.index')}}">Torna alla lista totale degli ordini</a>
 </div>
 @endsection
 
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch("{{ route('admin.orders.statistics.data') }}")
         .then(response => response.json())
         .then(data => {
-            const labels = data.map(item => '${item.month}/${item.year}');
+            const labels = data.map(item => `${item.month}/${item.year}`);
             const orderCounts = data.map(item => item.order_count);
             const totalSales = data.map(item => item.total_sales);
 

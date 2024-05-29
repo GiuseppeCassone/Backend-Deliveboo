@@ -6,6 +6,8 @@
 
     <h1>Riepilogo Ordini</h1>
 
+    <a class="btn btn-primary" href="{{route('admin.orders.statistics.index')}}">Visualizza le statistiche</a>
+
     @if($orders->isEmpty())
         <p>Nessun Ordine</p>
 
@@ -40,6 +42,8 @@
         </table>
     @endif       
            
+    <a class="btn btn-primary" href="{{route('admin.restaurant.index')}}">Torna al Ristorante</a>
+
     
 </div>
     

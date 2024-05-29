@@ -47,6 +47,9 @@
         </div>
     </div>
 
+    <a class="btn btn-primary my-3" href="{{route('admin.orders.index')}}">Torna agli ordini</a>
+    
+
 </div>
 
 

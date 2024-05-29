@@ -49,7 +49,8 @@ Route::middleware(['auth', 'verified'])
             Route::resource('orders', OrderController::class);
 
             Route::get('orders/statistics/data', [StatsController::class, 'OrderStats'])->name('orders.statistics.data');
-            Route::get('orders/statistics', [StatsController::class, 'ShowStats'])->name('orders.statistics.page');
+            
+            Route::get('orders/statistics/index', [StatsController::class, 'ShowStats'])->name('orders.statistics.index');
 
         }
     );
