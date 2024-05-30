@@ -1,18 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container d-flex">
+<div class="container">
     <h1>Statistiche degli Ordini</h1>
-    <div class="py-5">
-        <h2>Numero di Ordini per Mese</h2>
-        <canvas id="orderCountChart"></canvas>
-    </div>
-    <div class="py-5">
-        <h2>Totale Guadagno per Mese</h2>
-        <canvas id="salesChart"></canvas>
-    </div>
+    <div class="row ">
+        <div class=" col-12 col-md-6 py-5">
+            <h2>Numero di Ordini per Mese</h2>
+            <canvas id="orderCountChart"></canvas>
+        </div>
+        <div class="col-12 col-md-6 py-5">
+            <h2>Totale Guadagno per Mese</h2>
+            <canvas id="salesChart"></canvas>
+            
+        </div>
 
+    </div>
     <a class="btn btn-primary mb-2" href="{{route('admin.orders.index')}}">Torna alla lista totale degli ordini</a>
+
 </div>
 @endsection
 
