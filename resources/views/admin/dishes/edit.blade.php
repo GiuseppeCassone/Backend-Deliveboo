@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="personal_color2 personal_height">
-  <div class="container p-4 text-light">
+<div class="personal_height">
+  <div class="container p-4 personal_color3back">
 
       <h1>Modifica il seguente piatto</h1>
 
@@ -73,7 +73,7 @@
               </label>
           </div>
 
-          <button type="submit" class="btn btn-secondary">Modifica Piatto</button>
+          <button type="submit" class="btn btn-dark personal_color3">Modifica Piatto</button>
 
       </form>
 
@@ -96,6 +96,10 @@
 
   .personal_color3 {
       background-color: #006769; 
+  }
+
+  .personal_color3back {
+      color: #006769; 
   }
 
 </style>

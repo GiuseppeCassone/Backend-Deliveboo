@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5 d-flex justify-content-center flex-column align-items-center">
+<div class="container py-5 d-flex justify-content-center flex-column align-items-center  animate__animated animate__fadeIn">
 
-  <h1 class="mb-2 text-dark mb-3">Bentornato {{$user->name}}</h1>
+  <h1 class="mb-2 mb-3 personal_color3back">Bentornato {{$user->name}}, questo è il tuo ristorante:</h1>
 
   <div class="card mb-3 personal_color3 text-light w-75">
     <div class="row g-0">
@@ -46,9 +46,15 @@
     background-color: #006769; 
   }
 
+  .personal_color3back {
+    color: #006769; 
+  }
+
   .card {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   }
 
 </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 @endsection

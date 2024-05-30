@@ -2,15 +2,15 @@
 
 @section('content')
 <div class="p-4 personal_height personal_width d-flex align-items-center justify-content-center">
-    <div class="card personal_color3 text-light animate__animated animate__fadeIn">
-        <div class="card-header text-center fw-bold fs-4">{{ __('Accesso') }}</div>
+    <div class="card personal_color3 animate__animated animate__fadeIn w-50">
+        <div class="card-header text-light text-center fw-bold fs-4">{{ __('Accesso') }}</div>
 
         <div class="card-body">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
                 <div class="mb-4 row">
-                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo E-Mail') }}</label>
+                    <label for="email" class="col-md-4 text-light col-form-label text-md-right">{{ __('Indirizzo E-Mail') }}</label>
 
                     <div class="col-md-6">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="mb-4 row">
-                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                    <label for="password" class="col-md-4 text-light col-form-label text-md-right">{{ __('Password') }}</label>
 
                     <div class="col-md-6">
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
 
-                <div class="mb-4 row">
+                <div class="mb-4 row text-light">
                     <div class="col-md-6 offset-md-4">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -53,7 +53,7 @@
                         </button>
                         @if (Route::has('password.request'))
                         <a class="btn btn-link" href="{{ route('password.request') }}">
-                            {{ __('Hai dimenticato la password? (BRAVO)') }}
+                            {{ __('Hai dimenticato la password?') }}
                         </a>
                         @endif
                     </div>

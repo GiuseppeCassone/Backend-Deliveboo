@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="personal_color2 personal_height">
-    <div class="container p-4 text-light animate__animated animate__fadeInDown">
+<div class="personal_height">
+    <div class="container p-4 animate__animated animate__fadeInDown">
         <h1>Inserisci un nuovo piatto</h1>
 
         <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data" id="dish-form">
@@ -71,7 +71,7 @@
                 </label>
             </div>
 
-            <button type="submit" class="btn btn-secondary">AGGIUNGI</button>
+            <button type="submit" class="btn btn-dark">AGGIUNGI</button>
 
         </form>
     </div>

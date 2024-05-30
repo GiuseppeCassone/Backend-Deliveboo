@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="personal_color2 personal_height text-light">
-    <div class="container p-4">
+    <div class="container p-4 personal_color3back">
 
         <h1>Riepilogo Ordini</h1>
 
@@ -48,9 +46,13 @@
             
         
     </div>
-</div>
 
 <style>
+
+    .personal_color3back {
+        color: #006769; 
+    }
+
     .personal_color2 {
         background-color: #40A578;
         

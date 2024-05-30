@@ -3,9 +3,6 @@
 @section('content')
 <div class="personal_height d-flex align-items-center justify-content-center ">
     <div class="container ">
-        <h2 class="fs-4 text-dark py-4 text-center animate__animated animate__fadeInDown">
-            {{ __('Dashboard') }}
-        </h2>
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card personal_color3 text-light animate__animated animate__fadeIn">
