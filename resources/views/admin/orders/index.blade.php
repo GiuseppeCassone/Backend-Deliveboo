@@ -28,7 +28,7 @@
         <tbody>
                 @foreach ($orders as $order)
                 <tr>
-                <th scope="row">{{$order->created_at}}</th>
+                <th scope="row">{{$order->created_at->format('d/m/Y')}}</th>
                 <td>{{$order->customer_name}}</td>
                 <td>{{$order->customer_lastname}}</td>
                 <td>{{$order->customer_email}}</td>

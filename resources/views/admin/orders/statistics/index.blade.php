@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container d-flex">
     <h1>Statistiche degli Ordini</h1>
-    <div>
+    <div class="py-5">
         <h2>Numero di Ordini per Mese</h2>
         <canvas id="orderCountChart"></canvas>
     </div>
-    <div>
+    <div class="py-5">
         <h2>Totale Guadagno per Mese</h2>
         <canvas id="salesChart"></canvas>
     </div>
 
-    <a class="btn btn-primary" href="{{route('admin.orders.index')}}">Torna alla lista totale degli ordini</a>
+    <a class="btn btn-primary mb-2" href="{{route('admin.orders.index')}}">Torna alla lista totale degli ordini</a>
 </div>
 @endsection
 
@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.json();
         })
         .then(data => {
-            const labels = data.map(item => `${item.month}/${item.year}`);
+            const monthNames = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+            const labels = data.map(item => `${monthNames[item.month - 1]}/${item.year}`);
             const orderCounts = data.map(item => item.order_count);
             const totalSales = data.map(item => item.total);
 
@@ -64,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     datasets: [{
                         label: 'Totale Guadagni',
                         data: totalSales,
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(0, 255, 0, 0.5)',
+                        borderColor: 'rgba(0, 150, 0, 1)',
                         borderWidth: 1
                     }]
                 },
