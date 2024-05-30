@@ -98,7 +98,7 @@ class DishOrderSeeder extends Seeder
         // Associa i pianni agli ordini
         foreach ($DishOrderAssociations as $association) {
             $dish = Dish::find($association['dish_id']);
-            $dish->orders()->attach($association['order_id']);
+            $dish->orders()->attach($association['order_id'], ['quantity'=> $association['quantity']]);
         }
 
     }

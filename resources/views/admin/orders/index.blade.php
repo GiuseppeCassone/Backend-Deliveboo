@@ -3,7 +3,9 @@
 @section('content')
     <div class="container p-4 personal_color3back">
 
-        <h1>Riepilogo Ordini</h1>
+    <h1>Riepilogo Ordini</h1>
+
+    <a class="btn btn-primary" href="{{route('admin.orders.statistics.index')}}">Visualizza le statistiche</a>
 
         <table class="table animate__animated animate__fadeIn mt-3">
             <thead>
