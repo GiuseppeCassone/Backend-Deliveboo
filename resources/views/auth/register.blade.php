@@ -4,7 +4,7 @@
 <div class="p-4 personal_width">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card personal_color3 text-light">
+            <div class="card personal_color3 text-light animate__animated animate__fadeIn">
                 <div class="card-header text-center fw-bold fs-4">{{ __('Diventa collaboratore di WOW Delive, non te ne pentirai!') }}</div>
 
                 <div class="card-body">
