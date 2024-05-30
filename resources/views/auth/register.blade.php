@@ -12,11 +12,11 @@
                         @csrf
 
                         <div class="mb-4 row">
-                            <label for="name" class="col-md-4 text-light col-form-label text-md-right">{{ __('Nome') }} <span class="text-danger">*</span></label>
+                            <label for="name" class="col-md-4 text-light col-form-label text-md-right">{{ __('Nome') }} <span class="text-warning">*</span></label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" placeholder="Inserisci il tuo nome" maxlength="255" pattern="[A-Z a-z]+" title="Il tuo nome deve contenere solo lettere." class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autofocus required>
-                                <span id="name-error" class="text-danger" style="display: none;">Il tuo nome deve contenere solo lettere.</span>
+                                <span id="name-error" class="text-warning" style="display: none;">Il tuo nome deve contenere solo lettere.</span>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -27,11 +27,11 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="email" class="col-md-4 text-light col-form-label text-md-right">{{ __('E-Mail') }} <span class="text-danger">*</span></label>
+                            <label for="email" class="col-md-4 text-light col-form-label text-md-right">{{ __('E-Mail') }} <span class="text-warning">*</span></label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" placeholder="Inserisci la tua E-mail" class="form-control @error('email') is-invalid @enderror" name="email" pattern="^[A-Za-z0-9.-']+@[A-Za-z.-]+.[A-Za-z]{2,}$" title="Inserisci una mail valida" value="{{ old('email') }}" required>
-                                <span id="email-error" class="text-danger" style="display: none;">Inserisci una mail valida.</span>
+                                <span id="email-error" class="text-warning" style="display: none;">Inserisci una mail valida.</span>
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="password" class="col-md-4 text-light col-form-label text-md-right">{{ __('Password') }} <span class="text-danger">*</span></label>
+                            <label for="password" class="col-md-4 text-light col-form-label text-md-right">{{ __('Password') }} <span class="text-warning">*</span></label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" placeholder="Inserisci una password" minlength="8" class="form-control @error('password') is-invalid @enderror" name="password" required>
@@ -60,16 +60,16 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" placeholder="Conferma la password" minlength="8" title="Assicurati che la password corrisponda a quella inserita" class="form-control" name="password_confirmation" required>
-                                <span id="password-match-error" class="text-danger" style="display: none;">Le password non corrispondono.</span>
+                                <span id="password-match-error" class="text-warning" style="display: none;">Le password non corrispondono.</span>
                             </div>
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="restaurant_name" class="col-md-4 text-light col-form-label text-md-right">{{ __('Nome del tuo ristorante') }} <span class="text-danger">*</span></label>
+                            <label for="restaurant_name" class="col-md-4 text-light col-form-label text-md-right">{{ __('Nome del tuo ristorante') }} <span class="text-warning">*</span></label>
 
                             <div class="col-md-6">
                                 <input id="restaurant_name" type="text" placeholder="Inserisci il nome del tuo ristorante" maxlength="200" class="form-control @error('restaurant_name') is-invalid @enderror" name="restaurant_name" value="{{ old('restaurant_name') }}" required>
-                                <span id="restaurant_name-error" class="text-danger" style="display: none;">Inserisci il nome del tuo ristorante.</span>
+                                <span id="restaurant_name-error" class="text-warning" style="display: none;">Inserisci il nome del tuo ristorante.</span>
 
                                 @error('restaurant_name')
                                 <span class="invalid-feedback" role="alert">
@@ -98,7 +98,7 @@
 
                             <div class="col-md-6">
                                 <input id="description" type="text" placeholder="Inserisci una breve descrizione del ristorante..." class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}">
-                                <span id="description-error" class="text-danger" style="display: none;">Inserisci una breve descrizione del ristorante.</span>
+                                <span id="description-error" class="text-warning" style="display: none;">Inserisci una breve descrizione del ristorante.</span>
 
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
@@ -109,11 +109,11 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="address" class="col-md-4 text-light col-form-label text-md-right">{{ __('Indirizzo del ristorante') }} <span class="text-danger">*</span></label>
+                            <label for="address" class="col-md-4 text-light col-form-label text-md-right">{{ __('Indirizzo del ristorante') }} <span class="text-warning">*</span></label>
 
                             <div class="col-md-6">
                                 <input id="address" type="text" placeholder="Inserisci l'indirizzo del tuo ristorante" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required>
-                                <span id="address-error" class="text-danger" style="display: none;">Inserisci l'indirizzo del tuo ristorante.</span>
+                                <span id="address-error" class="text-warning" style="display: none;">Inserisci l'indirizzo del tuo ristorante.</span>
 
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
@@ -124,11 +124,11 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="vat" class="col-md-4 text-light col-form-label text-md-right">{{ __('P. IVA') }} <span class="text-danger">*</span></label>
+                            <label for="vat" class="col-md-4 text-light col-form-label text-md-right">{{ __('P. IVA') }} <span class="text-warning">*</span></label>
 
                             <div class="col-md-6">
                                 <input id="vat" type="text" placeholder="Inserisci la tua partita iva" maxlength="11" pattern="\d{11}" title="Il campo deve contenere esattamente 11 numeri." class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required>
-                                <span id="vat-error" class="text-danger" style="display: none;">Il campo deve contenere esattamente 11 numeri.</span>
+                                <span id="vat-error" class="text-warning" style="display: none;">Il campo deve contenere esattamente 11 numeri.</span>
 
                                 @error('vat')
                                 <span class="invalid-feedback" role="alert">
@@ -143,7 +143,7 @@
 
                             <div class="col-md-6">
                                 <input id="phone_number" type="text" placeholder="Inserisci il tuo numero di telefono" maxlength="10" pattern="\d{10}" title="Il campo deve contenere esattamente 10 numeri." class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}">
-                                <span id="phone-number-error" class="text-danger" style="display: none;">Il campo deve contenere esattamente 10 numeri.</span>
+                                <span id="phone-number-error" class="text-warning" style="display: none;">Il campo deve contenere esattamente 10 numeri.</span>
 
                                 @error('phone_number')
                                 <span class="invalid-feedback" role="alert">
@@ -154,9 +154,9 @@
                         </div>
 
                         <div class="mb-3 text-light">
-                            <label class="mb-2" for="typologies">Seleziona le tipologie del tuo ristorante <span class="text-danger">*</span></label>   
+                            <label class="mb-2" for="typologies">Seleziona le tipologie del tuo ristorante <span class="text-warning">*</span></label>   
                                     @if ($errors->has('typologies'))
-                                        <small class="text-danger fw-bold ms-2">
+                                        <small class="text-warning fw-bold ms-2">
                                             {{ $errors->first('typologies') }}
                                         </small>
                                     @endif
@@ -187,7 +187,7 @@
                         </div>
                         <div>
                             <small class="text-light">
-                                I campi contrassegnati dal simbolo <span class="text-danger">*</span> sono obbligatori.
+                                I campi contrassegnati dal simbolo <span class="text-warning">*</span> sono obbligatori.
                             </small>
                         </div>
                     </form>

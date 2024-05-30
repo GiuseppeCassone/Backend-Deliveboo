@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="personal_height">
-    <div class="container p-4 animate__animated animate__fadeInDown">
+    <div class="container p-4 animate__animated animate__fadeIn personal_color3back">
         <h1>Inserisci un nuovo piatto</h1>
 
         <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data" id="dish-form">
@@ -71,7 +71,7 @@
                 </label>
             </div>
 
-            <button type="submit" class="btn btn-dark">AGGIUNGI</button>
+            <button type="submit" class="btn btn-dark personal_color3">AGGIUNGI</button>
 
         </form>
     </div>
@@ -167,6 +167,10 @@ document.addEventListener('DOMContentLoaded', function () {
   
     .personal_color3 {
         background-color: #006769; 
+    }
+
+    .personal_color3back {
+        color: #006769; 
     }
   
   </style>

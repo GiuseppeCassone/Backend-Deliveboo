@@ -3,11 +3,11 @@
 @section('content')
 
 <div class="personal_height">
-  <div class="container p-4 personal_color3back">
+  <div class="container p-4 personal_color3back animate__animated animate__fadeIn">
 
       <h1>Modifica il seguente piatto</h1>
 
-      <form class="animate__animated animate__fadeInDown" action="{{route('admin.dishes.update', $dish)}}" method="POST" enctype="multipart/form-data">
+      <form action="{{route('admin.dishes.update', $dish)}}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('PUT')
 

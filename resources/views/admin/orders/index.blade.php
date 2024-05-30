@@ -5,16 +5,16 @@
 
         <h1>Riepilogo Ordini</h1>
 
-        <table class="table animate__animated animate__fadeInDown mt-3">
+        <table class="table animate__animated animate__fadeIn mt-3">
             <thead>
                 <tr>
-                    <th scope="col">Data</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Cognome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Indirizzo</th>
-                    <th scope="col">Telefono</th>
-                    <th scope="col">Totale Ordine</th>
+                    <th class="personal_color3back" scope="col">Data</th>
+                    <th class="personal_color3back" scope="col">Nome</th>
+                    <th class="personal_color3back" scope="col">Cognome</th>
+                    <th class="personal_color3back" scope="col">Email</th>
+                    <th class="personal_color3back" scope="col">Indirizzo</th>
+                    <th class="personal_color3back" scope="col">Telefono</th>
+                    <th class="personal_color3back" scope="col">Totale Ordine</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,17 +28,6 @@
                     <td>{{$order->customer_phone}}</td>
                     <td>{{$order->order_total}}€</td>
                     </tr>
-                    <!-- <tr> -->
-                    <!-- <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr> -->
                     @endforeach
                 </tbody>
             </table>
@@ -50,7 +39,7 @@
 <style>
 
     .personal_color3back {
-        color: #006769; 
+        color: #006769 !important; 
     }
 
     .personal_color2 {

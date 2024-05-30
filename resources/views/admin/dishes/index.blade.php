@@ -4,7 +4,7 @@
 
 <div class="personal_height">
     <div class="container py-5">
-        <ul class="list-unstyled animate__animated animate__fadeInDown ">
+        <ul class="list-unstyled animate__animated animate__fadeIn">
             @foreach ($dishes as $dish)
                 <li class="d-flex justify-content-between py-2 personal_color3">
                     <strong>{{ $dish->name }}</strong>
