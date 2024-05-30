@@ -1,49 +1,61 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container p-4 personal_color3back">
 
-<div class="container py-4">
+        <h1>Riepilogo Ordini</h1>
 
-    <h1>Riepilogo Ordini</h1>
-
-    @if($orders->isEmpty())
-        <p>Nessun Ordine</p>
-
-    @else
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Data</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Cognome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Indirizzo</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Totale Ordine</th>
-                <th scope="col">Dettagli</th>
-            </tr>
-        </thead>
-        <tbody>
-                @foreach ($orders as $order)
+        <table class="table animate__animated animate__fadeIn mt-3">
+            <thead>
                 <tr>
-                <th scope="row">{{$order->created_at}}</th>
-                <td>{{$order->customer_name}}</td>
-                <td>{{$order->customer_lastname}}</td>
-                <td>{{$order->customer_email}}</td>
-                <td>{{$order->customer_address}}</td>
-                <td>{{$order->customer_phone}}</td>
-                <td>{{$order->order_total}}€</td>
-                <td><a class="btn btn-success" href="{{route('admin.orders.show', $order)}}">Dettagli</a></td>
+                    <th class="personal_color3back" scope="col">Data</th>
+                    <th class="personal_color3back" scope="col">Nome</th>
+                    <th class="personal_color3back" scope="col">Cognome</th>
+                    <th class="personal_color3back" scope="col">Email</th>
+                    <th class="personal_color3back" scope="col">Indirizzo</th>
+                    <th class="personal_color3back" scope="col">Telefono</th>
+                    <th class="personal_color3back" scope="col">Totale Ordine</th>
                 </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @endif       
-           
-    
-</div>
-    
+            </thead>
+            <tbody>
+                    @foreach ($orders as $order)
+                    <tr>
+                    <th scope="row">{{$order->created_at}}</th>
+                    <td>{{$order->customer_name}}</td>
+                    <td>{{$order->customer_lastname}}</td>
+                    <td>{{$order->customer_email}}</td>
+                    <td>{{$order->customer_address}}</td>
+                    <td>{{$order->customer_phone}}</td>
+                    <td>{{$order->order_total}}€</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+                
+            
+        
+    </div>
 
+<style>
 
+    .personal_color3back {
+        color: #006769 !important; 
+    }
+
+    .personal_color2 {
+        background-color: #40A578;
+        
+    }
+
+    .personal_height {
+        height: calc(100vh - 130px);
+    }
+
+    .dropdown-menu {
+        background-color: #f8f9fa;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 @endsection

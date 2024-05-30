@@ -14,8 +14,7 @@
         {{__('Elimina Account')}}
     </button>
 
-    <!-- Corpo del Modal -->
-    <!-- se desideri chiudere cliccando al di fuori del modal, rimuovi l'attributo data-bs-backdrop="static" e data-bs-keyboard="false" -->
+    
     <div class="modal fade" id="delete-account" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="delete-account" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
