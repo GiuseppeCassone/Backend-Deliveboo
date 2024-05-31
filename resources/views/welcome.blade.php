@@ -4,7 +4,7 @@
 <div class="jumbotron p-5 personal_height">
     <div class="container py-5 text-center">
         <h1 class="display-4 fw-bold mb-4 personal_color3 animate__animated animate__fadeIn">
-            Bentornato, sei nell'interfaccia di gestione del tuo ristorante
+            Benvenuto, sei nell'interfaccia di gestione del tuo ristorante
         </h1>
         
         <div class="mt-4 animate__animated animate__fadeInUp">

@@ -7,6 +7,8 @@
 
       <h1>Modifica il seguente piatto</h1>
 
+      <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-dark mb-3 mt-3 personal_color3">Torna al tuo piatto</a>
+
       <form action="{{route('admin.dishes.update', $dish)}}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('PUT')
@@ -73,7 +75,7 @@
               </label>
           </div>
 
-          <button type="submit" class="btn btn-dark personal_color3">Modifica Piatto</button>
+          <button type="submit" class="btn btn-dark mt-2 personal_color3">Modifica Piatto</button>
 
       </form>
 

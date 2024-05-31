@@ -5,6 +5,8 @@
 <div class="container py-4 personal_color3 animate__animated animate__fadeIn">
     <h1>Riepilogo Ordine #{{ $order->id }}</h1>
 
+    <a class="btn btn-dark personal_color3back my-3" href="{{route('admin.orders.index')}}">Torna agli ordini</a>
+
     <div class="card mb-4 personal_color3">
         <div class="card-header">
             Dettagli Ordine
@@ -47,7 +49,7 @@
         </div>
     </div>
 
-    <a class="btn btn-dark personal_color3back my-3" href="{{route('admin.orders.index')}}">Torna agli ordini</a>
+    
     
 
 </div>

@@ -17,13 +17,16 @@
                     <p class="card-text"><strong>Disponibilità del piatto:</strong><br>{{ $dish->is_visible? 'Disponibile' : 'Non disponibile' }}</p>
                 </div>
                 <div class="p-3">
+
+                    <a href="{{route('admin.dishes.index')}}" class="btn personal_button">Torna al tuo menù</a>
+
                     <a href="{{route('admin.dishes.edit', $dish)}}" class="btn btn-warning">Modifica</a>
                             
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Elimina
                     </button>
         
-                    <a href="{{route('admin.dishes.index')}}" class="btn personal_button">Torna ai tuoi piatti</a>
+                    
                 </div>
             </div>
         </div>
