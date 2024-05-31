@@ -5,7 +5,7 @@
 
   <h1 class="mb-2 mb-3 personal_color3back">Bentornato {{$user->name}}, questo è il tuo ristorante:</h1>
 
-  <div class="card mb-3 personal_color3 text-light w-75">
+  <div class="card mb-3 personal_color3 text-light">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="{{str_contains($restaurant->img, 'https') ? $restaurant->img : asset('storage/' . $restaurant->img)}}" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
@@ -23,7 +23,6 @@
       </div>
     </div>
   </div>
-
     
 </div>
 
@@ -32,14 +31,6 @@
 
   .personal_color2 {
       background-color: #40A578;
-  }
-
-  .personal_height {
-      height: calc(100vh - 130px);
-  }
-
-  .personal_width {
-      width: 100wh;
   }
 
   .personal_color3 {
