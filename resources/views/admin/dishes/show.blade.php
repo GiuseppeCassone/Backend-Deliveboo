@@ -2,6 +2,10 @@
 
 @section('content')
 
+<div class="container">
+
+    <a href="{{route('admin.restaurant.index')}}" class="btn btn-info mt-3 personal_color3back animate__animated animate__fadeIn">Torna al tuo ristorante</a>
+</div>
 <div class="container d-flex justify-content-center py-5">
     <div class="card mb-3 personal_color3 text-light w-75">
         <div class="row g-0">

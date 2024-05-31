@@ -5,9 +5,10 @@
 <div class="personal_height">
   <div class="container p-4 personal_color3back animate__animated animate__fadeIn">
 
-      <h1>Modifica il seguente piatto</h1>
+    <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-dark mt-3 mb-3 personal_color3">Torna al tuo piatto</a>
+      
+    <h1>Modifica il seguente piatto</h1>
 
-      <a href="{{ route('admin.dishes.show', $dish) }}" class="btn btn-dark mb-3 mt-3 personal_color3">Torna al tuo piatto</a>
 
       <form action="{{route('admin.dishes.update', $dish)}}" method="POST" enctype="multipart/form-data">
           @csrf
