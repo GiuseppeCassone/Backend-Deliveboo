@@ -17,7 +17,7 @@
         <p class="card-text"><strong>Indirizzo:</strong><br>{{$restaurant->address}}</p>
         <p class="card-text"><strong>P. Iva:</strong><br>{{$restaurant->vat}}</p>
         <p class="card-text"><strong>Numero di Telefono:</strong><br>{{$restaurant->phone_number}}</p>
-        <a href="{{ route('admin.dishes.index') }}" class="btn btn-light">Visualizza il tuo menu</a>
+        <a href="{{ route('admin.dishes.index') }}" class="btn btn-light">Visualizza il tuo menù</a>
         <a href="{{ route('admin.orders.index') }}" class="btn btn-warning">Visualizza i tuoi ordini</a>
         </div>
       </div>

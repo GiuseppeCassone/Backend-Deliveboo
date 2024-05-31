@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="container animate__animated animate__fadeIn personal_color3 p-3">
-    <h1>Statistiche degli Ordini</h1>
+    <h1>Statistiche degli ordini</h1>
+
+    <a class="btn btn-dark personal_color3back mt-2 mb-2" href="{{route('admin.orders.index')}}">Torna alla lista totale degli ordini</a>
+
     <div class="row ">
         <div class=" col-12 col-md-6 py-3">
             <h2>Numero di Ordini per Mese</h2>
@@ -15,7 +18,7 @@
         </div>
 
     </div>
-    <a class="btn btn-dark personal_color3back mb-2" href="{{route('admin.orders.index')}}">Torna alla lista totale degli ordini</a>
+    
 
 </div>
 @endsection

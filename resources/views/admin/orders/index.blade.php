@@ -5,7 +5,12 @@
 
     <h1>Riepilogo Ordini</h1>
 
-    <a class="btn btn-dark personal_color3" href="{{route('admin.orders.statistics.index')}}">Visualizza le statistiche</a>
+    <div class="container pt-3 d-flex justify-content-between">
+        <a class="btn btn-dark personal_color3" href="{{route('admin.restaurant.index')}}">Torna al ristorante</a>
+        <a class="btn btn-dark personal_color3" href="{{route('admin.orders.statistics.index')}}">Visualizza le statistiche</a>
+    </div>
+
+    
 
         <table class="table mt-3">
             <thead>
@@ -29,13 +34,13 @@
                     <td>{{$order->customer_address}}</td>
                     <td>{{$order->customer_phone}}</td>
                     <td>{{$order->order_total}}€</td>
-                    <td><a class="btn btn-dark personal_color3" href="{{route('admin.orders.show', $order)}}">Dettagli</a></td>
+                    <td><a class="btn btn-warning" href="{{route('admin.orders.show', $order)}}">Dettagli</a></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
                 
-            <a class="btn btn-dark personal_color3" href="{{route('admin.restaurant.index')}}">Torna al Ristorante</a>
+            
         
     </div>
 

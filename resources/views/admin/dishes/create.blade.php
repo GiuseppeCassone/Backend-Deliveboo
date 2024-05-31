@@ -4,7 +4,9 @@
 
 <div class="personal_height">
     <div class="container p-4 animate__animated animate__fadeIn personal_color3back">
-        <h1>Inserisci un nuovo piatto</h1>
+        <h1>Inserisci un nuovo piatto al tuo menù</h1>
+
+        <a href="{{ route('admin.dishes.index') }}" class="btn btn-dark mb-3 mt-3 personal_color3">Torna al tuo menù</a>
 
         <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data" id="dish-form">
             @csrf
@@ -71,7 +73,7 @@
                 </label>
             </div>
 
-            <button type="submit" class="btn btn-dark personal_color3">AGGIUNGI</button>
+            <button type="submit" class="btn mt-2 btn-dark personal_color3">Aggiungi un nuovo piatto</button>
 
         </form>
     </div>
