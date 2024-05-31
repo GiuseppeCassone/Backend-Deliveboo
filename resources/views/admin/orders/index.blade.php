@@ -22,19 +22,20 @@
             <tbody>
                     @foreach ($orders as $order)
                     <tr>
-                    <th scope="row">{{$order->created_at}}</th>
+                    <th scope="row">{{$order->created_at->format('d/m/Y')}}</th>
                     <td>{{$order->customer_name}}</td>
                     <td>{{$order->customer_lastname}}</td>
                     <td>{{$order->customer_email}}</td>
                     <td>{{$order->customer_address}}</td>
                     <td>{{$order->customer_phone}}</td>
                     <td>{{$order->order_total}}€</td>
+                    <td><a class="btn btn-success" href="{{route('admin.orders.show', $order)}}">Dettagli</a></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
                 
-            
+            <a class="btn btn-primary" href="{{route('admin.restaurant.index')}}">Torna al Ristorante</a>
         
     </div>
 
