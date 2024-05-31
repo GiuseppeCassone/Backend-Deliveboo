@@ -25,7 +25,7 @@
 
         <nav class="navbar navbar-expand-md navbar-light shadow-sm personal_color1 ">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                <a class=" col-6 navbar-brand d-flex align-items-center m-0" href="{{ url('/') }}">
                     <div>
                         <img class="personal_logo img-fluid w-50" src="{{ asset('wowdelive-sb.svg') }}" alt="logo">
                     </div>
@@ -36,7 +36,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> --}}
 
-                <div class="navbar" id="navbarSupportedContent">
+                <div class="navbar col-6 justify-content-end" id="navbarSupportedContent">
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -44,12 +44,12 @@
                         @guest
                         
                         @else
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown position-relative">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu w-50 position-absolute" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
                                 <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -83,6 +83,58 @@
         background-color: #006769; 
     }
 
+    .navbar-brand {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggler {
+    flex: 0;
+}
+
+.navbar-collapse {
+    flex-basis: auto;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.nav-item.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 200px;
+    top: auto;
+    transform: translateY(10%);
+    transform: translateX(-40%); /* Display dropdown below the link */
+     /* Display dropdown below the link */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+    @media screen and (max-width: 500px) {
+        .navbar-brand {
+        flex: 1;
+        text-align: left;
+    }
+
+    .navbar-toggler {
+        flex: 0;
+    }
+
+    .navbar-collapse {
+        justify-content: flex-end;
+    }
+
+    .navbar-nav {
+        width: auto;
+    }
+
+    .dropdown-menu {
+        width: auto; /* Ensure the dropdown menu is appropriately wide */
+    }
+}
     
 
 </style>
