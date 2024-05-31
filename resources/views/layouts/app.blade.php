@@ -27,7 +27,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div>
-                        <img class="personal_logo img-fluid w-50" src="{{ asset('storage/logo/wowdelive-sb (1).svg') }}" alt="logo">
+                        <img class="personal_logo img-fluid w-50" src="{{ asset('wowdelive-sb.svg') }}" alt="logo">
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
