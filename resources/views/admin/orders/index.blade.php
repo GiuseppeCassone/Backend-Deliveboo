@@ -14,9 +14,9 @@
             <thead>
                 <tr>
                     <th class="personal_color3back" scope="col">Data</th>
-                    <th class="personal_color3back d-none d-lg-table-cell" scope="col">Nome</th>
+                    <th class="personal_color3back" scope="col">Nome</th>
                     <th class="personal_color3back d-none d-lg-table-cell" scope="col">Cognome</th>
-                    <th class="personal_color3back" scope="col">Email</th>
+                    <th class="personal_color3back d-none d-lg-table-cell" scope="col">Email</th>
                     <th class="personal_color3back d-none d-lg-table-cell" scope="col">Indirizzo</th>
                     <th class="personal_color3back d-none d-lg-table-cell" scope="col">Telefono</th>
                     <th class="personal_color3back text-center" scope="col">Totale Ordine</th>
@@ -27,9 +27,9 @@
                 @foreach ($orders as $order)
                 <tr>
                 <th scope="row">{{$order->created_at->format('d/m/Y')}}</th>
-                <td class="d-none d-lg-table-cell">{{$order->customer_name}}</td>
+                <td class="">{{$order->customer_name}}</td>
                 <td class="d-none d-lg-table-cell">{{$order->customer_lastname}}</td>
-                <td>{{$order->customer_email}}</td>
+                <td class="d-none d-lg-table-cell">{{$order->customer_email}}</td>
                 <td class="d-none d-lg-table-cell">{{$order->customer_address}}</td>
                 <td class="d-none d-lg-table-cell">{{$order->customer_phone}}</td>
                 <td class="text-center">{{$order->order_total}}€</td>
