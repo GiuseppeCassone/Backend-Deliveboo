@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container animate__animated animate__fadeIn personal_color3 p-3">
     <h1>Statistiche degli Ordini</h1>
     <div class="row ">
-        <div class=" col-12 col-md-6 py-5">
+        <div class=" col-12 col-md-6 py-3">
             <h2>Numero di Ordini per Mese</h2>
             <canvas id="orderCountChart"></canvas>
         </div>
-        <div class="col-12 col-md-6 py-5">
+        <div class="col-12 col-md-6 py-3">
             <h2>Totale Guadagno per Mese</h2>
             <canvas id="salesChart"></canvas>
             
         </div>
 
     </div>
-    <a class="btn btn-primary mb-2" href="{{route('admin.orders.index')}}">Torna alla lista totale degli ordini</a>
+    <a class="btn btn-dark personal_color3back mb-2" href="{{route('admin.orders.index')}}">Torna alla lista totale degli ordini</a>
 
 </div>
 @endsection
@@ -89,4 +89,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 });
 </script>
+
+<style>
+
+    .personal_color3 {
+        color: #006769; 
+    }
+
+    .personal_color3back {
+        background-color: #006769; 
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 @endsection

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container p-4 personal_color3back">
+    <div class="container p-4 personal_color3back animate__animated animate__fadeIn">
 
     <h1>Riepilogo Ordini</h1>
 
-    <a class="btn btn-primary" href="{{route('admin.orders.statistics.index')}}">Visualizza le statistiche</a>
+    <a class="btn btn-dark personal_color3" href="{{route('admin.orders.statistics.index')}}">Visualizza le statistiche</a>
 
-        <table class="table animate__animated animate__fadeIn mt-3">
+        <table class="table mt-3">
             <thead>
                 <tr>
                     <th class="personal_color3back" scope="col">Data</th>
@@ -29,13 +29,13 @@
                     <td>{{$order->customer_address}}</td>
                     <td>{{$order->customer_phone}}</td>
                     <td>{{$order->order_total}}€</td>
-                    <td><a class="btn btn-success" href="{{route('admin.orders.show', $order)}}">Dettagli</a></td>
+                    <td><a class="btn btn-dark personal_color3" href="{{route('admin.orders.show', $order)}}">Dettagli</a></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
                 
-            <a class="btn btn-primary" href="{{route('admin.restaurant.index')}}">Torna al Ristorante</a>
+            <a class="btn btn-dark personal_color3" href="{{route('admin.restaurant.index')}}">Torna al Ristorante</a>
         
     </div>
 
@@ -43,6 +43,10 @@
 
     .personal_color3back {
         color: #006769 !important; 
+    }
+
+    .personal_color3 {
+        background-color: #006769; 
     }
 
     .personal_color2 {
