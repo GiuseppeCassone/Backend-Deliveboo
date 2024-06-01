@@ -70,9 +70,16 @@
           </div>
 
           <div class="form-check mb-2">
-              <input class="form-check-input" name="is_visible" type="checkbox" value="0" id="is_visible" @if (old('is_visible') || $dish->is_visible) checked @endif>
+              <input class="form-check-input" name="is_visible" type="checkbox" value="0" id="is_visible">
               <label class="form-check-label" for="is_visible">
                 NON VISIBILE
+              </label>
+          </div>
+
+          <div class="form-check mb-2">
+              <input class="form-check-input" name="is_visible" type="checkbox" value="1" id="is_visible">
+              <label class="form-check-label" for="is_visible">
+                VISIBILE
               </label>
           </div>
 
