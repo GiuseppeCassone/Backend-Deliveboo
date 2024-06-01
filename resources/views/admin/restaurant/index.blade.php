@@ -34,16 +34,13 @@
 
 
 
-/* @media screen and (min-width: 883px) and (max-width:1104px){
+@media screen and (max-width: 768px){
 
   #card img{
-    width: 50%
+    display:none;
   }
-  
-  width: 100%
-  
 
-} */
+}
 
   .personal_color2 {
       background-color: #40A578;
