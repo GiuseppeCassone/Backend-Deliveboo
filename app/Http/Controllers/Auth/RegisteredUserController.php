@@ -80,6 +80,8 @@ class RegisteredUserController extends Controller
         $path = Storage::disk("public")->put("images", $request->img);
 
         // $restaurant_image->img = $path;
+    } else {
+        $path = null;
     }
 
         $user = User::create([

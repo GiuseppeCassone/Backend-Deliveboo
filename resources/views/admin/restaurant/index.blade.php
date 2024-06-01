@@ -3,12 +3,12 @@
 @section('content')
 <div class="container-fluid container-lg py-5 d-flex justify-content-center flex-column align-items-center  animate__animated animate__fadeIn">
 
-  <h1 class="mb-2 mb-3 personal_color3back">Bentornato {{$user->name}}, questo è il tuo ristorante:</h1>
+  <h1 class="mb-2 mb-3 personal_color3back">Bentornato {{$user->name}}, <br>questo è il tuo ristorante:</h1>
 
   <div id="card" class="card personal_color3 text-light">
     <div class="row g-0">
       <div class="col-12 col-lg-5">
-        <img src="{{str_contains($restaurant->img, 'https') ? $restaurant->img : asset('storage/' . $restaurant->img)}}" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
+        <img src="{{ $restaurant->img ? (str_contains($restaurant->img, 'https') ? $restaurant->img : asset('storage/' . $restaurant->img)) : asset('fallback-image-one.jpg') }}" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
       </div>
       <div class="col-12 col-lg-7">
         <div class="card-body">
@@ -32,12 +32,19 @@
   widows: 75%;
 }
 
+br{
+  display: none;
+}
 
 
 @media screen and (max-width: 768px){
 
   #card img{
     display:none;
+  }
+
+  br{
+    display: block;
   }
 
 }
