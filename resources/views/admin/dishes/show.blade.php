@@ -4,10 +4,10 @@
 
 <div class="container">
 
-    <a href="{{route('admin.restaurant.index')}}" class="btn btn-info mt-3 personal_color3back animate__animated animate__fadeIn">Torna al tuo ristorante</a>
+    <a href="{{route('admin.restaurant.index')}}" class="btn btn-color mt-3 personal_color3back animate__animated animate__fadeIn">Torna al tuo ristorante</a>
 </div>
 <div class="container d-flex justify-content-center py-5">
-    <div class="card mb-3 personal_color3 text-light w-75">
+    <div class="card mb-3 personal_color3 text-light w-75 animate__animated animate__fadeIn">
         <div class="row g-0">
             <div class="col-md-5">
                 <img src="{{str_contains($dish->img, 'https') ? $dish->img : asset('storage/' . $dish->img)}}" class="img-fluid rounded-start h-100 object-fit-cover" alt="immagine">
@@ -99,6 +99,19 @@
         background-color: #658e5a;
     }
 
+    .btn-color{
+        background-color: #40A578;
+        border-color: #006769;
+    }
+
+    .btn-color:hover{
+        background-color: #006769;
+        color: white
+    }
+
     
 </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 @endsection
