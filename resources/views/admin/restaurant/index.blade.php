@@ -5,12 +5,12 @@
 
   <h1 class="mb-2 mb-3 personal_color3back">Bentornato {{$user->name}}, questo è il tuo ristorante:</h1>
 
-  <div id="card" class="card mb-3 personal_color3 text-light">
+  <div id="card" class="card personal_color3 text-light">
     <div class="row g-0">
-      <div class="col-12 col-lg-4">
+      <div class="col-12 col-lg-5">
         <img src="{{str_contains($restaurant->img, 'https') ? $restaurant->img : asset('storage/' . $restaurant->img)}}" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
       </div>
-      <div class="col-12 col-lg-8">
+      <div class="col-12 col-lg-7">
         <div class="card-body">
           <h5 class="card-title">{{$restaurant->name}}</h5>
           <p class="card-text"><strong>Descrizione:</strong><br>{{$restaurant->description}}</p>
@@ -28,7 +28,6 @@
 
 
 <style lang="scss">
-
 #card{
   widows: 75%;
 }

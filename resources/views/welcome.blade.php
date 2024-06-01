@@ -9,9 +9,9 @@
         
         <div class="mt-4 animate__animated animate__fadeInUp">
             @guest
-            <a class="btn btn-dark btn-lg me-2  personal_color3back" href="{{ route('login') }}">{{ __('Accedi al tuo WOW ristorante') }}</a>
+            <a class="btn btn-dark btn-lg me-2 mb-3 personal_color3back" href="{{ route('login') }}">{{ __('Accedi al tuo WOW ristorante') }}</a>
             @if (Route::has('register'))
-            <a class="btn btn-dark btn-lg  personal_color3back" href="{{ route('register') }}">{{ __('Registrati e diventa WOW') }}</a>
+            <a class="btn btn-dark btn-lg mb-3 personal_color3back" href="{{ route('register') }}">{{ __('Registrati e diventa WOW') }}</a>
             @endif
             @else
             <div class="btn-group ">

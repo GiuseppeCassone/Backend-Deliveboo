@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="p-4 personal_height personal_width d-flex align-items-center justify-content-center">
-    <div class="card personal_color3 animate__animated animate__fadeIn w-50">
+    <div class="card personal_color3 animate__animated animate__fadeIn">
         <div class="card-header text-light text-center fw-bold fs-4">{{ __('Accesso') }}</div>
 
         <div class="card-body">
@@ -72,6 +72,10 @@
         width: 100%;
     }
 
+    .card{
+        width: 50%;
+    }
+
     .personal_color3 {
         background-color: #006769;
     }
@@ -98,6 +102,15 @@
     .btn-link:hover {
         color: #1B8761;
         text-decoration: underline;
+    }
+
+    @media screen and (max-width: 868px){
+        
+        .card{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 </style>
 

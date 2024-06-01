@@ -24,7 +24,7 @@
 
 
         <nav class="navbar navbar-expand-md navbar-light shadow-sm personal_color1 ">
-            <div class="container">
+            <div class="container px-4">
                 <a class=" col-6 navbar-brand d-flex align-items-center m-0" href="{{ url('/') }}">
                     <div>
                         <img class="personal_logo img-fluid w-50" src="{{ asset('wowdelive-sb.svg') }}" alt="logo">
