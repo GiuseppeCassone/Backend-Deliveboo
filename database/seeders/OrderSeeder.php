@@ -16,6 +16,25 @@ class OrderSeeder extends Seeder
         $orders = [
             [
                 'customer_name' => 'John',
+                'customer_lastname' => 'McEnroe',
+                'customer_email' => 'john.mc@example.com',
+                'customer_address' => '123 Second St, Springfield',
+                'customer_phone' => '6574321892',
+                'order_total' => 60.00,
+                'created_at'=> '2023-06-17 20:12:00'
+            ],
+            [
+                'customer_name' => 'James',
+                'customer_lastname' => 'Cameron',
+                'customer_email' => 'jane.smith@example.com',
+                'customer_address' => '256 Elm St, Springfield',
+                'customer_phone' => '3346578911',
+                'order_total' => 40.00,
+                'created_at'=> '2023-07-10 21:12:00'
+
+            ],
+            [
+                'customer_name' => 'John',
                 'customer_lastname' => 'Doe',
                 'customer_email' => 'john.doe@example.com',
                 'customer_address' => '123 Main St, Springfield',
