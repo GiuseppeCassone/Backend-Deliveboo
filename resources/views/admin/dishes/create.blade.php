@@ -26,12 +26,6 @@
             <div class="mb-2">
                 <label for="img" class="form-label">Immagine: </label>
                 <input type="file" class="form-control" id="img" name="img" value="{{ old('img') }}">
-                <span id="img-error" class="text-danger" style="display: none;">Inserisci un'immagine valida.</span>
-                @error('img')
-                <div class="invalid-feedback">
-                {{$message}}
-                </div>
-                @enderror
             </div>
 
             <div class="mb-2">
@@ -46,7 +40,7 @@
             </div>
 
             <div class="mb-2">
-                <label for="description" class="form-label">Descrizione: </label>
+                <label for="description" class="form-label">Descrizione: <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}" >
                 <span id="description-error" class="text-danger" style="display: none;">La descrizione è obbligatoria.</span>
                 @error('description')

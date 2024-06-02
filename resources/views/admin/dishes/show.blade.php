@@ -10,7 +10,7 @@
     <div class="card mb-3 personal_color3 text-light w-75 animate__animated animate__fadeIn">
         <div class="row g-0">
             <div class="col-md-5">
-                <img src="{{str_contains($dish->img, 'https') ? $dish->img : asset('storage/' . $dish->img)}}" class="img-fluid rounded-start h-100 object-fit-cover" alt="immagine">
+                <img src="{{ !empty($dish->img) ? (str_contains($dish->img, 'https') ? $dish->img : asset('storage/' . $dish->img)) : asset('my-img/fallback-dish.png') }}" class="img-fluid rounded-start h-100 object-fit-cover" alt="immagine">
             </div>
             <div class="col-md-7">
                 <div class="card-body">
