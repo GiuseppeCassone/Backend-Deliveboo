@@ -13,7 +13,6 @@ class TypologySeeder extends Seeder
      */
     public function run(): void
     {
-        // $typologies = ['Italiano', 'Cinese', 'Giapponese', 'Greco', 'Indiano', 'Messicano', 'Pesce', 'Carne', 'Pizza', 'Vegana'];
 
         $typologies = [
             [
@@ -44,7 +43,7 @@ class TypologySeeder extends Seeder
                 'type' => 'Pesce',
                 'img' => 'pesce.jpg',
             ],
-            [
+                [
                 'type' => 'Carne',
                 'img' => 'carne.jpg',
             ],
@@ -55,6 +54,14 @@ class TypologySeeder extends Seeder
             [
                 'type' => 'Vegano',
                 'img' => 'vegano.jpg',
+            ],
+            [
+                'type' => 'Senza Glutine',
+                'img' => 'senzaglutine.jpg',
+            ],
+            [
+                'type' => 'Americano',
+                'img' => 'americano.jpg',
             ]
         ];
 

@@ -143,7 +143,7 @@ class RestaurantSeeder extends Seeder
             ],
             [
                 'name' => 'Starbucks',
-                'img' => 'https://www.arkadbudapest.hu/fileadmin/user_upload/GLOBAL/brand_stores/logos/starbucks.jpg',
+                'img' => 'https://cdn.logoworks.com/wp-content/uploads/2017/06/Untitled-2-640x360-1.png',
                 'description' => 'Caffè e pasticceria',
                 'address' => 'Via Veneto, Roma, Italy',
                 'vat' => 'IT12345672238', 
