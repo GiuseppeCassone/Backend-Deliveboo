@@ -20,7 +20,7 @@ class OrderSeeder extends Seeder
                 'customer_email' => 'john.mc@example.com',
                 'customer_address' => '123 Second St, Springfield',
                 'customer_phone' => '6574321892',
-                'order_total' => 60.00,
+                'order_total' => 42.00,
                 'created_at'=> '2023-06-17 20:12:00'
             ],
             [
@@ -29,7 +29,7 @@ class OrderSeeder extends Seeder
                 'customer_email' => 'jane.smith@example.com',
                 'customer_address' => '256 Elm St, Springfield',
                 'customer_phone' => '3346578911',
-                'order_total' => 40.00,
+                'order_total' => 28.00,
                 'created_at'=> '2023-07-10 21:12:00'
 
             ],
@@ -39,7 +39,7 @@ class OrderSeeder extends Seeder
                 'customer_email' => 'john.doe@example.com',
                 'customer_address' => '123 Main St, Springfield',
                 'customer_phone' => '1234567890',
-                'order_total' => 20.00,
+                'order_total' => 36.00,
                 'created_at'=> '2023-08-20 13:12:00'
             ],
             [
@@ -58,7 +58,7 @@ class OrderSeeder extends Seeder
                 'customer_email' => 'bob.johnson@example.com',
                 'customer_address' => '789 Oak St, Springfield',
                 'customer_phone' => '1122334455',
-                'order_total' => 10.00,
+                'order_total' => 54.00,
                 'created_at'=> '2023-10-20 11:12:00'
                 
             ],
@@ -171,16 +171,7 @@ class OrderSeeder extends Seeder
                 'customer_phone' => '6549873210',
                 'order_total' => 50.00,
                 'created_at' => '2024-05-01 20:30:00'
-            ],
-            // [
-            //     'customer_name' => 'Snoopy',
-            //     'customer_lastname' => 'Doggy',
-            //     'customer_email' => 'snoopy@example.com',
-            //     'customer_address' => '456 Poplar St, Springfield',
-            //     'customer_phone' => '3216549870',
-            //     'order_total' => 99.99,
-            //     'created_at' => '2024-05-15 22:00:00'
-            // ]
+            ]
 
         ];
 
