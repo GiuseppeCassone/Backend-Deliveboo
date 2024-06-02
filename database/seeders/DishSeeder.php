@@ -88,7 +88,7 @@ class DishSeeder extends Seeder
                 "description" => "Un delizioso panino con carne di manzo, formaggio fuso e salsa speciale.",
                 "ingredients" => "Pane, carne di manzo, formaggio, salsa",
                 "is_visible" => true,
-                "restaurant_id" => 7
+                "restaurant_id" => 11
             ],
             [
                 "name" => "Crispy Mc Bacon",
@@ -97,7 +97,7 @@ class DishSeeder extends Seeder
                 "description" => "Un gustoso panino con bacon croccante, salsa crispy e formaggio.",
                 "ingredients" => "Pane, carne di manzo, bacon, formaggio",
                 "is_visible" => true,
-                "restaurant_id" => 7
+                "restaurant_id" => 11
             ],
             [
                 "name" => "Piadina Crispy Chicken",
@@ -106,7 +106,7 @@ class DishSeeder extends Seeder
                 "description" => "Una piadina con pollo fritto, maionese e insalata fresca.",
                 "ingredients" => "Piadina, pollo, maionese, insalata",
                 "is_visible" => true,
-                "restaurant_id" => 7
+                "restaurant_id" => 12
             ],
             [
                 "name" => "Piadina Grilled Chicken",
@@ -115,7 +115,25 @@ class DishSeeder extends Seeder
                 "description" => "Una piadina con pollo grigliato, maionese e insalata fresca.",
                 "ingredients" => "Piadina, pollo, maionese, insalata",
                 "is_visible" => true,
-                "restaurant_id" => 7
+                "restaurant_id" => 12
+            ],
+            [
+                "name" => "Chicken Tender Crispy",
+                "img" => "https://images.openfoodfacts.org/images/products/200/000/011/6999/front_fr.4.full.jpg",
+                "price" => 6.00,
+                "description" => "Filetti di pollo fritti con una panatura croccante.",
+                "ingredients" => "Pollo",
+                "is_visible" => true,
+                "restaurant_id" => 10
+            ],
+            [
+                "name" => "Chicken bucket",
+                "img" => "https://media.imagonist.com/products/products/295_thumb_it.png?v=1715334850",
+                "price" => 12.00,
+                "description" => "Cestino con Filetti di pollo fritti con una panatura croccante.",
+                "ingredients" => "Pollo",
+                "is_visible" => true,
+                "restaurant_id" => 10
             ],
             [
                 "name" => "Frappuccino",
