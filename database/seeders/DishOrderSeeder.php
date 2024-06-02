@@ -17,12 +17,12 @@ class DishOrderSeeder extends Seeder
         $DishOrderAssociations = [
 
             [
-                'dish_id' => 14, 
+                'dish_id' => 18, 
                 'order_id' => 1, 
                 'quantity' => 3,
             ],
             [
-                'dish_id' => 14, 
+                'dish_id' => 18, 
                 'order_id' => 2, 
                 'quantity' => 2,
             ],

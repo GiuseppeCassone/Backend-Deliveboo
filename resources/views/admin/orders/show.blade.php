@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container py-4 personal_color3 animate__animated animate__fadeIn">
-    <h1>Riepilogo Ordine #{{ $order->id }}</h1>
+    <h1>Riepilogo Ordine</h1>
 
     <a class="btn btn-dark personal_color3back my-3" href="{{route('admin.orders.index')}}">Torna agli ordini</a>
 
@@ -12,7 +12,7 @@
             Dettagli Ordine
         </div>
         <div class="card-body ">
-            <p><strong>ID Ordine:</strong><span class="text-dark"> {{ $order->id }}</span></p>
+            <!-- <p><strong>ID Ordine:</strong><span class="text-dark"> {{ $order->id }}</span></p> -->
             <p><strong>Creato il:</strong><span class="text-dark"> {{ $order->created_at->format('d/m/Y') }}</span></p>
             <p><strong>Nome Cliente:</strong><span class="text-dark"> {{ $order->customer_name }}</span></p>
             <p><strong>Cognome Cliente:</strong><span class="text-dark"> {{ $order->customer_lastname }}</span></p>
