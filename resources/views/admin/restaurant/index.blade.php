@@ -13,10 +13,10 @@
       <div class="col-12 col-lg-7">
         <div class="card-body">
           <h5 class="card-title">{{$restaurant->name}}</h5>
-          <p class="card-text"><strong>Descrizione:</strong><br>{{$restaurant->description}}</p>
-        <p class="card-text"><strong>Indirizzo:</strong><br>{{$restaurant->address}}</p>
-        <p class="card-text"><strong>P. Iva:</strong><br>{{$restaurant->vat}}</p>
-        <p class="card-text"><strong>Numero di Telefono:</strong><br>{{$restaurant->phone_number}}</p>
+          <p class="card-text"><strong>Descrizione:</strong><br> {{$restaurant->description}}</p>
+        <p class="card-text"><strong>Indirizzo:</strong><br> {{$restaurant->address}}</p>
+        <p class="card-text"><strong>P. Iva:</strong><br> {{$restaurant->vat}}</p>
+        <p class="card-text"><strong>Numero di Telefono:</strong><br> {{$restaurant->phone_number}}</p>
         <a href="{{ route('admin.dishes.index') }}" class="btn btn-light mb-1">Visualizza il tuo menù</a>
         <a href="{{ route('admin.orders.index') }}" class="btn btn-warning mb-1">Visualizza i tuoi ordini</a>
         </div>
