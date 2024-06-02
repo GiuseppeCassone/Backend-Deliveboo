@@ -53,7 +53,7 @@ class RestaurantSeeder extends Seeder
             ],
             [
                 'name' => 'SteakHouse',
-                'img' => 'https://www.corriere.it/methode_image/2022/11/14/Cucina/Foto%20Cucina%20-%20Trattate/linas-kteF--590x445@Corriere-Web-Sezioni.jpg', 
+                'img' => 'https://www.hawksmoornyc.com/wp-content/uploads/Prime-rib-with-sides-2--1024x683.jpg', 
                 'description' => 'Ristorante dove mangiare la fiorentina',
                 'address' => '1213 Via Dante, Firenze, Italy',
                 'vat' => 'IT34567890123', 

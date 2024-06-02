@@ -431,6 +431,15 @@ class DishSeeder extends Seeder
                 "ingredients" => "Impasto per pizza, salsiccia, friarielli",
                 "is_visible" => true,
                 "restaurant_id" => 4
+            ],
+            [
+                "name" => "Filetto di Wagyu (A5)",
+                "img" => "https://mikeleerose.com/wp-content/uploads/fette-di-wagyu.jpeg",
+                "price" => 50.00,
+                "description" => "Filetto di carne pregiata Wagyu Giapponese",
+                "ingredients" => "Carne di manzo, olio, sale",
+                "is_visible" => true,
+                "restaurant_id" => 5
             ]
 
             
